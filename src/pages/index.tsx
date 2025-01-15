@@ -1,12 +1,40 @@
+import Checklist from "@/components/Checklist";
+import { Checklist as ChecklistType } from "@/types";
+import { readFileSync } from "fs";
 import { Source_Sans_3 } from "next/font/google";
 import Head from "next/head";
+import styled from "styled-components";
+import { parse } from "yaml";
 
 const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
   subsets: ["latin"],
 });
 
-export default function Home() {
+const Main = styled.main`
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  font-size: 10pt;
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  row-gap: 0px;
+  height: 10in;
+  width: 4in;
+  padding: 0.25in;
+  padding-top: 0.1in;
+  border: 0.5px solid black;
+`;
+
+export type HomeProps = {
+  checklist: ChecklistType;
+};
+
+export default function Home({ checklist }: HomeProps) {
   return (
     <>
       <Head>
@@ -16,9 +44,23 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={`${sourceSans.variable}`}>
-        <main>hi</main>
-      </div>
+      <Main className={sourceSans.className}>
+        <Column>
+          <Checklist checklist={checklist} />
+        </Column>
+        <Column>hi2</Column>
+      </Main>
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const checklistFile = readFileSync("content/182.yml", "utf-8");
+  const checklist = parse(checklistFile) as ChecklistType;
+
+  return {
+    props: {
+      checklist,
+    },
+  };
+};

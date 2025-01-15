@@ -1,0 +1,138 @@
+sections:
+  - name: Engine Start
+    tasks:
+      - subsection: Before Start
+        tasks:
+          - item: Passengers
+            command: Briefed
+          - item: Seatbelts and doors
+            command: Latched
+          - item: Parking brake
+            command: "Off"
+          - item: Fuel selector valve
+            command: Both
+          - item: Cowl flaps
+            command: Open
+          - item: Carburetor heat
+            command: Cold ▲
+          - item: Beacon and nav lights
+            command: "On"
+          - item: Circuit breakers
+            command: Check in
+          - item: Avionics master
+            command: "Off"
+          - item: Prime
+            command: "2-4 stroke, as req."
+      - subsection: Ignition
+        tasks:
+          - item: Master switch
+            command: On
+          - item: Mixture
+            command: Full rich ▲
+          - item: Prop
+            command: Full fine ▲
+          - item: Throttle
+            command: Cracked, 1/8"
+          - item: Fuel pump
+            command: On / rise in fuel press. / off
+          - item: Prop area
+            command: Clear
+          - item: Key
+            command: In ignition
+          - item: Brakes
+            command: Held
+          - item: Key
+            command: Start
+          - item: Oil pressure
+            command: Green arc
+      - subsection: Taxi
+        tasks:
+          - item: Avionics master
+            command: On
+          - item: JPI
+            command: Fuel set
+            annotation: LF hold △, tap ▽
+          - item: Airport diagram
+            command: Displayed
+          - item: Mixture
+            command: Leaned for taxi (2")
+          - item: Flaps
+            command: Up
+
+  - name: Engine Run-Up
+    tasks:
+      - item: Seats and belts
+        command: Latched
+      - item: Doors and windows
+        command: Closed and latched
+      - item: Flight controls
+        command: Free + correct, full elev. + aileron
+      - item: Fuel selector valve
+        command: Both
+      - item: Elevator trim
+        command: Set for takeoff
+      - item: Mixture
+        command: Full rich
+      - item: Oil temp. and press.
+        command: ">100 °F / Green arc"
+      - item: Fuel quantity
+        command: Confirm
+      - item: Throttle
+        command: 1700 RPM
+      - item: JPI
+        command: Normalize mode
+        annotation: LF for 3 sec.
+      - item: Magnetos
+        command: L/R
+        annotation: 175 RPM ▽ / 50° EGT △
+      - item: Carb heat (no dust)
+        command: Open
+        annotation: RPM ▽ / IAT △
+      - item: Propeller
+        command: Cycle
+        annotation: RPM ▽ / Oil press. ▽
+      - item: Alternator
+        command: Confirm discharge
+      - item: Throttle friction lock
+        command: Adjusted
+      - item: Primer
+        command: In and locked
+      - item: JPI
+        command: Percent mode
+        annotation: LF for 3 sec.
+      - item: Flaps
+        command: 10°, or as req.
+
+  - name: Engine Run-Up
+    tasks:
+      - item: Clearance
+        command: Reviewed
+      - item: Altimeter
+        command: G5 set / Analog set
+      - item: Transponder
+        command: Code, ALT
+      - item: GPS / user fields
+        command: Configured
+      - item: COM/NAV freqs
+        command: Set
+      - item: CDI source
+        command: NAV/GPS
+      - item: AP test
+        command: HDG / override / disengage
+      - item: AP
+        command: Initial HDG / Initial ALT
+
+  - name: Departure briefing
+    tasks:
+      - item: Runway, crosswind
+        command: Briefed
+      - item: Abort point
+        command: 35 KIAS by __
+      - item: Rotate
+        command: 50 KIAS
+      - item: Climb out
+        command: 80 KIAS
+      - item: At TPA, power
+        command: Set 25" and 2400 RPM
+      - item: Takeoff engine failure
+        command: Hard push, < 200' / < 800' / > 800'
