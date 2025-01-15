@@ -1,12 +1,18 @@
 import { BasicTask, Section } from "@/types";
 import styled from "styled-components";
 import Subsection from "./Subsection";
+import { Roboto_Condensed } from "next/font/google";
 
 const SectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0px;
 `;
+
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto-condensed",
+  subsets: ["latin"],
+});
 
 const Header = styled.h2`
   margin: 0px;
@@ -22,8 +28,8 @@ const Header = styled.h2`
 
   border-radius: 0.15em;
   padding: 0.25em;
-  padding-top: 0.15em;
-  padding-bottom: 0.15em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 `;
 
 export type SectionProps = {
@@ -35,7 +41,7 @@ const SectionComponent = ({ section }: SectionProps) => {
 
   return (
     <>
-      <Header>{section.name}</Header>
+      <Header className={robotoCondensed.className}>{section.name}</Header>
 
       <SectionContainer>
         {hasSubsections ? (

@@ -12,6 +12,7 @@
   body {
     margin: 0mm;
     padding: 0mm;
+    background-color: #fff;
   }
 
   .no-print,
@@ -27,10 +28,12 @@
     margin-bottom: 5em;
     overflow: hidden;
   }
+  body {
+    background-color: #000;
+  }
 }
 
 body {
   margin: 0px;
   padding: 0px;
-  background-color: #000;
 }

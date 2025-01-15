@@ -16,6 +16,11 @@ export type Section = {
   tasks: Task[];
 };
 
-export type Checklist = {
+export type ChecklistColumn = {
   sections: Section[];
+};
+
+export type Checklist = {
+  left: ChecklistColumn;
+  right: ChecklistColumn;
 };

@@ -1,6 +1,12 @@
 import { BasicTask } from "@/types";
+import { Roboto_Condensed } from "next/font/google";
 import styled from "styled-components";
 import DoItem from "./DoItem";
+
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto-condensed",
+  subsets: ["latin"],
+});
 
 const SubsectionContainer = styled.div`
   position: relative;
@@ -22,7 +28,7 @@ const SubsectionLabel = styled.div`
   transform: rotate(180deg);
   writing-mode: vertical-rl;
 
-  border-left: 0.1em solid black;
+  border-left: 1px solid black;
 `;
 
 const TaskContainer = styled.div`
@@ -42,11 +48,13 @@ export type SubsectionProps = {
 const SubsectionComponent = ({ title, tasks }: SubsectionProps) => {
   return (
     <SubsectionContainer>
-      <SubsectionLabel>{title}</SubsectionLabel>
+      <SubsectionLabel className={robotoCondensed.className}>
+        {title}
+      </SubsectionLabel>
       <TaskContainer>
-        {tasks.map((task) => {
-          return <DoItem key={task.item} task={task} />;
-        })}
+        {tasks.map((task) => (
+          <DoItem key={task.item} task={task} />
+        ))}
       </TaskContainer>
     </SubsectionContainer>
   );

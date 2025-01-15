@@ -1,4 +1,4 @@
-import Checklist from "@/components/Checklist";
+import ChecklistColumn from "@/components/ChecklistColumn";
 import { Checklist as ChecklistType } from "@/types";
 import { readFileSync } from "fs";
 import { Source_Sans_3 } from "next/font/google";
@@ -18,18 +18,6 @@ const Main = styled.main`
   font-size: 10pt;
 `;
 
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  row-gap: 0px;
-  height: 10in;
-  width: 4in;
-  padding: 0.25in;
-  padding-top: 0.1in;
-  border: 0.5px solid black;
-`;
-
 export type HomeProps = {
   checklist: ChecklistType;
 };
@@ -45,10 +33,8 @@ export default function Home({ checklist }: HomeProps) {
       </Head>
 
       <Main className={sourceSans.className}>
-        <Column>
-          <Checklist checklist={checklist} />
-        </Column>
-        <Column>hi2</Column>
+        <ChecklistColumn checklist={checklist.left} />
+        <ChecklistColumn checklist={checklist.right} />
       </Main>
     </>
   );
