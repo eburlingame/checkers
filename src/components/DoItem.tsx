@@ -18,7 +18,7 @@ const Separator = styled.span`
 
 const Command = styled.span`
   display: flex;
-  width: 2in;
+  width: 1.9in;
   margin-left: 0.5em;
   font-weight: 500;
 `;

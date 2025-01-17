@@ -1,0 +1,162 @@
+name: N2017E Ground Checklist
+accent_color: "#545454"
+left:
+  sections:
+    - name: Engine Shutdown
+      tasks:
+        - item: GoPro
+          command: Stop
+        - item: Turbo cooldown
+          command: 3 min at < 1000 RPM
+        - item: Avionics master
+          command: Off
+        - item: Pitot heat
+          command: Off
+        - item: Lights
+          command: Off, except beacon
+        - item: Magnetos
+          command: Check grounding
+        - item: Mixture
+          command: Idle cutoff
+        - item: Ignition
+          command: Off, keys on dash
+        - item: Master switch
+          command: Off
+
+    - name: Securing Airplane
+      tasks:
+        - item: Hobbs time
+          command: Recorded
+        - item: Tach time
+          command: Recorded
+        - item: Pitot tube cover
+          command: Install
+        - item: Control wheel lock
+          command: Install
+        - item: Chocks
+          command: Install
+        - item: Battery charger
+          command: Connected
+        - item: Leading edge
+          command: Cleaned
+        - item: Windscreen
+          command: Cleaned
+        - item: FlightCircle
+          command: Check in
+        - item: Logbooks
+          command: Entered
+        - item: ForeFlight logbook
+          command: Entered
+
+right:
+  sections:
+    - name: Preflight Inspection
+      tasks:
+        - item: ARROW documents
+          command: Verify
+        - item: Control wheel lock
+          command: Remove
+        - item: Pitot cover
+          command: Removed
+        - item: Parking break
+          command: Off
+        - item: Elevator trim
+          command: Set for takeoff
+        - item: Avionics master
+          command: Off
+        - item: Master
+          command: On
+        - item: Fuel selector valve
+          command: Both
+        - item: Fuel gauge
+          command: Verify
+        - item: Avionics cooling fan
+          command: Audible
+        - item: Flaps
+          command: Full
+        - item: Lights
+          command: On, checked
+        - item: Pitot heat
+          command: On, checked
+        - item: Stall vane / horn
+          command: Checked
+        - item: Master switch
+          command: Off
+        - item: Tach / Hobbs time
+          command: Recorded
+        - item: FlightCircle
+          command: Dispatched
+
+    - name: Walk-Around
+      tasks:
+        - item: Tie downs
+          command: Removed
+        - item: Chocks, vent covers
+          command: Removed
+        - item: Static port
+          command: Clear
+        - item: Pitot tube
+          command: Clear
+        - item: Air inlets
+          command: Clear
+        - item: Left wing
+          command: Leading edge, aileron, flaps
+        - item: Left main gear
+          command: Inflation, tread, brakes
+        - item: Tail number
+          command: Visible
+        - item: Elevator
+          command: Full travel
+        - item: Rudder
+          command: Full travel
+        - item: Elevator trim
+          command: Secure, netural
+        - item: Tail antennas
+          command: Intact
+        - item: Right main gear
+          command: Inflation, tread, brakes
+        - item: Right wing
+          command: Leading edge, aileron, flaps
+        - item: Oil dipstick
+          command: 6.5 qts (min 5, max 8), secure
+        - item: Prop
+          command: Secure, check for nicks
+        - item: Nose wheel strut
+          command: Check travel
+        - item: Nose wheel
+          command: Inflation, tread, brakes
+        - item: Oil filler cap
+          command: Secrure
+        - item: Fuel level
+          command: Checked with dipstick
+        - item: Fuel sumps (3)
+          command: Drained and checked
+        - item: Battery charger
+          command: Disconnected
+        - item: Baggage door
+          command: Latched and secure
+
+    - name: Passenger Briefing
+      tasks:
+        - item: Seats and belts
+          command: Adjustments, seatbelts
+        - item: Air / temps / sickness
+          command: Location, operation, sic bags
+        - item: Fire extinguister
+          command: Location and operation
+        - item: Exits and equipment
+          command: Doors, windows
+        - item:
+          command: Exiting the airplane
+        - item:
+          command: Survival gear / first aid kit
+        - item: Talking / traffic
+          command: Sterile cockpit
+        - item:
+          command: Headset volume, mic, PTT
+        - item:
+          command: Scanning for traffic
+        - item:
+          command: Autopilot blue LVL button
+        - item: Your questions?
+          command:

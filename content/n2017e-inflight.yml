@@ -6,6 +6,8 @@ left:
           tasks:
             - item: Passengers
               command: Briefed
+            - item: CO Detector
+              command: On
             - item: Seatbelts and doors
               command: Latched
             - item: Parking brake
@@ -127,16 +129,17 @@ left:
       tasks:
         - item: Runway, crosswind
           command: Briefed
-        - item: Abort point
-          command: 35 KIAS by __
         - item: Rotate
           command: 50 KIAS
         - item: Climb out
           command: 80 KIAS
         - item: At TPA, power
           command: Set 25" and 2400 RPM
-        - item: Takeoff engine failure
-          command: Hard push, < 200' / < 800' / > 800'
+        - item: Takeoff emergency
+          command: Hard push
+          annotation: < 200' / < 800' / > 800'
+        - item: GoPro
+          command: As req.
 
 right:
   sections:

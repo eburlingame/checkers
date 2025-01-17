@@ -13,6 +13,10 @@ const ColumnContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
+
+  @media screen {
+    border: 0.5px solid black;
+  }
 `;
 
 export type ChecklistColumnProps = {

@@ -41,7 +41,7 @@ export default function Home({ checklist }: HomeProps) {
 }
 
 export const getStaticProps = async () => {
-  const checklistFile = readFileSync("content/182.yml", "utf-8");
+  const checklistFile = readFileSync("content/n2017e-ground.yml", "utf-8");
   const checklist = parse(checklistFile) as ChecklistType;
 
   return {
