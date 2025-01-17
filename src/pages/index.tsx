@@ -1,4 +1,5 @@
 import ChecklistColumn from "@/components/ChecklistColumn";
+import { ChecklistContext } from "@/hooks";
 import { Checklist as ChecklistType } from "@/types";
 import { readFileSync } from "fs";
 import { Source_Sans_3 } from "next/font/google";
@@ -33,8 +34,10 @@ export default function Home({ checklist }: HomeProps) {
       </Head>
 
       <Main className={sourceSans.className}>
-        <ChecklistColumn checklist={checklist.left} />
-        <ChecklistColumn checklist={checklist.right} />
+        <ChecklistContext.Provider value={checklist}>
+          <ChecklistColumn column={checklist.left} />
+          <ChecklistColumn column={checklist.right} />
+        </ChecklistContext.Provider>
       </Main>
     </>
   );

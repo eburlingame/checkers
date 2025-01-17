@@ -1,5 +1,6 @@
 name: N2017E Ground Checklist
 accent_color: "#545454"
+spacing: 1.2
 left:
   sections:
     - name: Engine Shutdown

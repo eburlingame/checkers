@@ -1,3 +1,5 @@
+name: N2017E In-Flight Checklist
+accent_color: "#000000"
 left:
   sections:
     - name: Engine Start

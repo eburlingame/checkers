@@ -21,6 +21,9 @@ export type ChecklistColumn = {
 };
 
 export type Checklist = {
+  name: string;
+  accent_color?: string;
+  spacing?: string;
   left: ChecklistColumn;
   right: ChecklistColumn;
 };

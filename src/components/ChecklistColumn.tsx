@@ -1,3 +1,4 @@
+import { useChecklist } from "@/hooks";
 import { ChecklistColumn } from "@/types";
 import styled from "styled-components";
 import Section from "./Section";
@@ -19,16 +20,26 @@ const ColumnContainer = styled.div`
   }
 `;
 
+const Footer = styled.div`
+  margin-top: auto;
+  font-size: 8pt;
+  text-align: center;
+`;
+
 export type ChecklistColumnProps = {
-  checklist: ChecklistColumn;
+  column: ChecklistColumn;
 };
 
-const ChecklistColumnComponent = ({ checklist }: ChecklistColumnProps) => {
+const ChecklistColumnComponent = ({ column }: ChecklistColumnProps) => {
+  const checklist = useChecklist();
+
   return (
     <ColumnContainer>
-      {checklist.sections.map((section) => (
+      {column.sections.map((section) => (
         <Section key={section.name} section={section} />
       ))}
+
+      <Footer>{checklist.name}</Footer>
     </ColumnContainer>
   );
 };

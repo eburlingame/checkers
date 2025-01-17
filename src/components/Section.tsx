@@ -1,7 +1,8 @@
+import { useChecklist } from "@/hooks";
 import { BasicTask, Section } from "@/types";
+import { Roboto_Condensed } from "next/font/google";
 import styled from "styled-components";
 import Subsection from "./Subsection";
-import { Roboto_Condensed } from "next/font/google";
 
 const SectionContainer = styled.div`
   display: flex;
@@ -20,7 +21,6 @@ const Header = styled.h2`
   font-size: 10pt;
   line-height: 1;
   text-transform: uppercase;
-  background-color: black;
   font-size: 10pt;
   font-weight: 600;
   color: white;
@@ -34,11 +34,18 @@ export type SectionProps = {
 };
 
 const SectionComponent = ({ section }: SectionProps) => {
+  const checklist = useChecklist();
+
   const hasSubsections = section.tasks.some((task) => "subsection" in task);
 
   return (
     <>
-      <Header className={robotoCondensed.className}>{section.name}</Header>
+      <Header
+        className={robotoCondensed.className}
+        style={{ backgroundColor: checklist.accent_color || "#000000" }}
+      >
+        {section.name}
+      </Header>
 
       <SectionContainer>
         {hasSubsections ? (
