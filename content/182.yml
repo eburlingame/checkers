@@ -213,7 +213,9 @@ right:
         - item: Landing light, strobe
           command: As req.
         - item: Arrival briefing
-          command: Rwy, pattern, TPA, winds, ramp CTAF / Tower	›	Tuned
+          command: Rwy, pattern, TPA, winds, ramp
+        - item: CTAF / Tower
+          command: Tuned
 
     - name: Before Landing
       tasks:

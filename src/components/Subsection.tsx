@@ -13,7 +13,7 @@ const SubsectionContainer = styled.div`
   display: flex;
   align-items: stretch;
   width: 100%;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
 `;
 
 const SubsectionLabel = styled.div`
@@ -37,7 +37,7 @@ const TaskContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0px;
-  line-height: 1.1;
+  line-height: 1.04;
 `;
 
 export type SubsectionProps = {

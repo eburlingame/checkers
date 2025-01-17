@@ -16,7 +16,6 @@ const robotoCondensed = Roboto_Condensed({
 
 const Header = styled.h2`
   margin: 0px;
-  margin-top: 0.25em;
   margin-bottom: 0.25em;
   font-size: 10pt;
   line-height: 1;
@@ -28,8 +27,6 @@ const Header = styled.h2`
 
   border-radius: 0.15em;
   padding: 0.25em;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
 `;
 
 export type SectionProps = {

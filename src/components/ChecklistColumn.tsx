@@ -3,15 +3,16 @@ import styled from "styled-components";
 import Section from "./Section";
 
 const ColumnContainer = styled.div`
+  row-gap: 0px;
+  height: 9.75in;
+  width: 3.875in;
+  padding: 0.05in;
+  padding-left: 1em;
+  padding-right: 1em;
+
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  row-gap: 0px;
-  height: 10in;
-  width: 4in;
-  padding: 0.25in;
-  padding-top: 0.1in;
-  border: 0.5px solid black;
 `;
 
 export type ChecklistColumnProps = {

@@ -5,7 +5,7 @@
 }
 
 @page {
-  size: 11in 17in;
+  size: 8.5in 11in;
 }
 
 @media print {
@@ -36,4 +36,8 @@
 body {
   margin: 0px;
   padding: 0px;
+}
+
+* {
+  box-sizing: border-box;
 }
