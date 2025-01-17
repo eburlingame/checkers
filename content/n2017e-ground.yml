@@ -59,7 +59,7 @@ right:
           command: Remove
         - item: Pitot cover
           command: Removed
-        - item: Parking break
+        - item: Parking brake
           command: Off
         - item: Elevator trim
           command: Set for takeoff
@@ -127,7 +127,7 @@ right:
         - item: Nose wheel
           command: Inflation, tread, brakes
         - item: Oil filler cap
-          command: Secrure
+          command: Secure
         - item: Fuel level
           command: Checked with dipstick
         - item: Fuel sumps (3)

@@ -1,0 +1,264 @@
+name: N549SR Flight Checklist
+accent_color: "#000000"
+spacing: 1.00
+left:
+  sections:
+    - name: Engine Start
+      tasks:
+        - subsection: Before Start
+          tasks:
+            - item: Preflight inspection
+              command: Completed
+            - item: Emergency equipment
+              command: On board
+            - item: Passengers
+              command: Briefed
+            - item: Seats seat belts and harnesses
+              command: Adjust secure
+            - item: Brakes
+              command: Hold
+            - item: BAT master switches
+              command: On check volts
+            - item: Strobe lights
+              command: On
+            - item: Mixture
+              command: Full rich
+            - item: Power lever
+              command: Full forward
+            - item: Fuel pump
+              command: Prime then boost
+            - item: Propeller area
+              command: Clear
+            - item: Power lever
+              command: Open 1/4 inch
+            - item: Ignition switch
+              command: Start release after engine starts
+            - item: Power lever
+              command: Retard to maintain 1000 RPM
+            - item: Oil pressure
+              command: Check
+            - item: ALT master switches
+              command: On
+            - item: Avionics power switch
+              command: On
+            - item: Engine parameters
+              command: Monitor
+            - item: Amp meter indication
+              command: Check
+
+        - subsection: Taxi
+          tasks:
+            - item: Flaps
+              command: Up
+            - item: Radios avionics
+              command: As required
+            - item: Cabin heat defrost
+              command: As required
+            - item: Fuel selector
+              command: Switch tank
+            - item: Parking brake
+              command: Disengage
+            - item: Brakes
+              command: Check
+            - item: HSI orientation
+              command: Check
+            - item: Attitude gyro
+              command: Check
+            - item: Turn coordinator
+              command: Check
+
+        - subsection: Run up
+          tasks:
+            - item: Doors
+              command: Latched
+            - item: Caps handle
+              command: Verify pin removed
+            - item: Seat belts / harness
+              command: Secure
+            - item: Air conditioner
+              command: As desired
+            - item: Fuel quantity
+              command: Confirm
+            - item: Fuel selector
+              command: Fullest tank
+            - item: Fuel pump
+              command: Boost
+            - item: Mixture
+              command: As required
+            - item: Flaps
+              command: 50%, checked
+            - item: Transponder
+              command: Set
+            - item: Autopilot
+              command: Check
+            - item: Nav/Radios/GPS
+              command: Set for takeoff
+            - item: Cabin heat defrost
+              command: As required
+            - item: Brakes
+              command: Hold
+            - item: Power lever
+              command: 1700 RPM
+            - item: Alternator
+              command: Check
+            - item: Pitot heat
+              command: On
+            - item: Navigation lights
+              command: On
+            - item: Landing light
+              command: On
+            - item: Annunciator lights
+              command: Check
+            - item: Voltage
+              command: Check
+            - item: Pitot heat
+              command: As required
+            - item: Navigation lights
+              command: As required
+            - item: Landing light
+              command: As required
+            - item: Magnetos
+              command: Left, rights
+            - item: RPM drop
+              command: ≤150 RPM / ≤75 between mags
+            - item: Engine parameters
+              command: Check
+            - item: Power lever
+              command: 1000 RPM
+            - item: HSI and altimeter
+              command: Check set
+            - item: Flight controls
+              command: Free and correct
+            - item: Trim
+              command: Set for takeoff
+            - item: Autopilot
+              command: Disconnect
+
+right:
+  sections:
+    - name: Normal Takeoff
+      tasks:
+        - item: Brakes
+          command: Release
+        - item: Power Lever
+          command: Full forward
+        - item: Engine parameters
+          command: Check
+        - item: Elevator Control
+          command: Rotate smoothly, 70-73 KIAS
+        - item: At 80 KIAS
+          command: Flaps up
+
+    - name: Short Field Takeoff
+      tasks:
+        - item: Flaps
+          command: 50%
+        - item: Brakes
+          command: Hold
+        - item: Power lever
+          command: Full forward
+        - item: Mixture
+          command: Set
+        - item: Engine parameters
+          command: Check
+        - item: Brakes
+          command: Release steer with rudder only
+        - item: Elevator control
+          command: Rotate smoothly, 70 KIAS
+        - item: Airspeed at obstacle
+          command: 78 KIAS
+
+    - name: Climb
+      tasks:
+        - item: Climb Power
+          command: Set
+        - item: Flaps
+          command: Verify up
+        - item: Mixture
+          command: Lean as required for altitude
+        - item: Engine parameters
+          command: Check
+        - item: Fuel Pump
+          command: Boost
+
+    - name: Cruise
+      tasks:
+        - item: Fuel Pump
+          command: Off
+        - item: Cruise Power
+          command: Set
+        - item: Mixture
+          command: Lean as required
+        - item: Engine parameters
+          command: Monitor
+        - item: Fuel flow and balance
+          command: Monitor
+
+    - name: Descent
+      tasks:
+        - item: Altimeter
+          command: Set
+        - item: Cabin heat/defrost
+          command: As required
+        - item: Landing light
+          command: On
+        - item: Fuel system
+          command: Check
+        - item: Mixture
+          command: As required
+        - item: Brake pressure
+          command: Check
+
+    - name: Before Landing
+      tasks:
+        - item: Seat belts / Harnesses
+          command: Secure
+        - item: Fuel Pump
+          command: Boost
+        - item: Mixture
+          command: As required
+        - item: Flaps
+          command: As required
+        - item: Autopilot
+          command: As required
+
+    - name: Go-Around
+      tasks:
+        - item: Autopilot
+          command: Disengage
+        - item: Power lever
+          command: Full forward
+        - item: Flaps
+          command: 50
+        - item: Airspeed
+          command: 75 80 KIAS
+        - item: Clear of obstacles
+          command: Flaps up
+
+    - name: After Landing
+      tasks:
+        - item: Power Lever
+          command: 1000 RPM
+        - item: Fuel pump
+          command: Off
+        - item: Flaps
+          command: Up
+        - item: Lights
+          command: As required
+        - item: Pitot Heat
+          command: Off
+
+    - name: Shutdown
+      tasks:
+        - item: Fuel pump
+          command: Off
+        - item: Throttle
+          command: Idle
+        - item: Ignition Switch
+          command: Check mag grounding
+        - item: Mixture
+          command: Cutoff
+        - item: All Switches
+          command: Off, right-to-left
+        - item: Magnetos
+          command: Off

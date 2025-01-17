@@ -1,11 +1,8 @@
-import ChecklistColumn from "@/components/ChecklistColumn";
-import { ChecklistContext } from "@/hooks";
-import { Checklist as ChecklistType } from "@/types";
-import { readFileSync } from "fs";
+import { readdirSync } from "fs";
 import { Source_Sans_3 } from "next/font/google";
 import Head from "next/head";
+import Link from "next/link";
 import styled from "styled-components";
-import { parse } from "yaml";
 
 const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
@@ -20,10 +17,10 @@ const Main = styled.main`
 `;
 
 export type HomeProps = {
-  checklist: ChecklistType;
+  checklists: string[];
 };
 
-export default function Home({ checklist }: HomeProps) {
+export default function Home({ checklists }: HomeProps) {
   return (
     <>
       <Head>
@@ -34,22 +31,26 @@ export default function Home({ checklist }: HomeProps) {
       </Head>
 
       <Main className={sourceSans.className}>
-        <ChecklistContext.Provider value={checklist}>
-          <ChecklistColumn column={checklist.left} />
-          <ChecklistColumn column={checklist.right} />
-        </ChecklistContext.Provider>
+        <ul>
+          {checklists.map((name) => (
+            <li key={name}>
+              <Link href={`/checklists/${name}`}>{name} checklist</Link>
+            </li>
+          ))}
+        </ul>
       </Main>
     </>
   );
 }
 
 export const getStaticProps = async () => {
-  const checklistFile = readFileSync("content/n2017e-ground.yml", "utf-8");
-  const checklist = parse(checklistFile) as ChecklistType;
+  const checklists = readdirSync("content")
+    .filter((file) => file.endsWith(".yml"))
+    .map((file) => file.replace(".yml", ""));
 
   return {
     props: {
-      checklist,
+      checklists,
     },
   };
 };
