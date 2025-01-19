@@ -13,8 +13,8 @@ left:
               command: On board
             - item: Passengers
               command: Briefed
-            - item: Seats seat belts and harnesses
-              command: Adjust secure
+            - item: Seats and belts
+              command: Adjusted and secure
             - item: Brakes
               command: Hold
             - item: BAT master switches
@@ -43,7 +43,7 @@ left:
               command: On
             - item: Engine parameters
               command: Monitor
-            - item: Amp meter indication
+            - item: Ammeter indication
               command: Check
 
         - subsection: Taxi
@@ -60,20 +60,16 @@ left:
               command: Disengage
             - item: Brakes
               command: Check
-            - item: HSI orientation
-              command: Check
-            - item: Attitude gyro
-              command: Check
-            - item: Turn coordinator
-              command: Check
+            - item: AHRS calibration
+              command: Confirm
 
         - subsection: Run up
           tasks:
             - item: Doors
               command: Latched
-            - item: Caps handle
+            - item: CAPS handle
               command: Verify pin removed
-            - item: Seat belts / harness
+            - item: Seats and belts
               command: Secure
             - item: Air conditioner
               command: As desired
@@ -90,7 +86,7 @@ left:
             - item: Transponder
               command: Set
             - item: Autopilot
-              command: Check
+              command: Configured
             - item: Nav/Radios/GPS
               command: Set for takeoff
             - item: Cabin heat defrost
@@ -103,9 +99,7 @@ left:
               command: Check
             - item: Pitot heat
               command: On
-            - item: Navigation lights
-              command: On
-            - item: Landing light
+            - item: All lights
               command: On
             - item: Annunciator lights
               command: Check
@@ -113,27 +107,38 @@ left:
               command: Check
             - item: Pitot heat
               command: As required
-            - item: Navigation lights
-              command: As required
-            - item: Landing light
+            - item: Lights
               command: As required
             - item: Magnetos
-              command: Left, rights
+              command: Left only / Right only
             - item: RPM drop
               command: ≤150 RPM / ≤75 between mags
             - item: Engine parameters
               command: Check
             - item: Power lever
               command: 1000 RPM
-            - item: HSI and altimeter
-              command: Check set
+            - item: Altimeter 1 & 2
+              command: Baro set
             - item: Flight controls
               command: Free and correct
             - item: Trim
               command: Set for takeoff
             - item: Autopilot
-              command: Disconnect
+              command: Disconnected
 
+    - name: Departure briefing
+      tasks:
+        - item: Runway, crosswind
+          command: Briefed
+        - item: Rotate, climb
+          command: 70-73 KIAS, 80 KIAS
+        - item: Takeoff emergency
+          command: Hard push
+          annotation: < 500' / > 500' / > 2000'
+        - item: CAPs available
+          command: 500 ft. AGL
+        - item: GoPro
+          command: As req.
 right:
   sections:
     - name: Normal Takeoff
@@ -144,7 +149,7 @@ right:
           command: Full forward
         - item: Engine parameters
           command: Check
-        - item: Elevator Control
+        - item: Elevator control
           command: Rotate smoothly, 70-73 KIAS
         - item: At 80 KIAS
           command: Flaps up
@@ -211,7 +216,7 @@ right:
 
     - name: Before Landing
       tasks:
-        - item: Seat belts / Harnesses
+        - item: Seats and belts
           command: Secure
         - item: Fuel Pump
           command: Boost
@@ -229,9 +234,9 @@ right:
         - item: Power lever
           command: Full forward
         - item: Flaps
-          command: 50
+          command: 50%
         - item: Airspeed
-          command: 75 80 KIAS
+          command: 75-80 KIAS
         - item: Clear of obstacles
           command: Flaps up
 
@@ -258,7 +263,7 @@ right:
           command: Check mag grounding
         - item: Mixture
           command: Cutoff
-        - item: All Switches
+        - item: All switches
           command: Off, right-to-left
         - item: Magnetos
           command: Off

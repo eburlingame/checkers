@@ -5,14 +5,16 @@ left:
   sections:
     - name: Preflight Inspection
       tasks:
+        - item: Stall warning sucker
+          command: Retrieve
         - item: ARROW documents
           command: Verify
         - item: Avionics master
           command: Off
         - item: BAT 2 master
-          command: ON
+          command: On
         - item: PFD
-          command: Verify ON
+          command: Verify on
         - item: Avionics cooling fan
           command: Audible
         - item: Voltmeter
@@ -43,8 +45,8 @@ left:
           command: Charged and available
         - item: Emergency egress hammer
           command: Available
-        - item: CAPS Handle
-          command: Pin Removed
+        - item: CAPS handle
+          command: Pin removed
         - item: Tach / Hobbs time
           command: Recorded
         - item: FlightCircle
@@ -52,10 +54,43 @@ left:
 
     - name: Walk-Around
       tasks:
+        - subsection: Left Wing
+          tasks:
+            - item: External power
+              command: Disconnected, door secure
+            - item: Cabin air vent
+              command: Unobstructed
+            - item: Fuel cap
+              command: Check quantity and secure
+            - item: Leading edge, stall strips
+              command: Condition
+            - item: Fuel vent
+              command: Unobstructed
+            - item: Pitot mast
+              command: Cover removed, tube clear
+            - item: Strobe and nav light
+              command: Condition and security
+            - item: Wing tip
+              command: Attachment
+            - item: Flap and rub strips
+              command: Condition and security
+            - item: Aileron
+              command: Freedom of movement
+            - item: Aileron gap seal
+              command: Security
+            - item: Aileron cotter pins
+              command: Secure
+            - item: Wheel fairings
+              command: Security, clear of debris
+            - item: Tire
+              command: Condition, inflation, wear
+            - item: Wheel and brakes
+              command: Fluid, leaks, overheating, condition
+            - item: Chocks / tiedowns
+              command: Removed
+
         - subsection: Left Fuselage
           tasks:
-            - item: Door lock
-              command: Unlocked
             - item: COM 1 Antenna
               command: Condition and attachment
             - item: Wing/fuselage fairing
@@ -69,44 +104,11 @@ left:
             - item: Parachute cover
               command: Sealed and secure
 
-        - subsection: Left Wing
-          tasks:
-            - item: Wheel fairings
-              command: Security, clear of debris
-            - item: Tire
-              command: Condition, inflation, wear
-            - item: Wheel and brakes
-              command: Fluid, leaks, overheating, condition
-            - item: Chocks / tiedowns
-              command: Remove
-            - item: Cabin air vent
-              command: Unobstructed
-            - item: Fuel cap
-              command: Check quantity and secure
-            - item: Leading edge and stall strips
-              command: Condition
-            - item: Fuel vent
-              command: Unobstructed
-            - item: Pitot mast
-              command: Cover removed, tube clear
-            - item: Strobe and Nav Light
-              command: Condition and security
-            - item: Wing tip
-              command: Attachment
-            - item: Flap and rub strips
-              command: Condition and security
-            - item: Aileron
-              command: Freedom of movement
-            - item: Aileron gap seal
-              command: Security
-            - item: Hinges, actuation arm, bolts, and cotter pins
-              command: Secure
-
         - subsection: Empennage
           tasks:
             - item: Tiedowns
               command: Removed
-            - item: Horizontal + vertical stabilizers
+            - item: Horizontal/vertical stabilizers
               command: Condition
             - item: Elevator and tab
               command: Condition and movement
@@ -114,7 +116,7 @@ left:
               command: Freedom of movement
             - item: Rudder trim tab
               command: Condition and security
-            - item: Attachment hinges, bolts, cotter pins
+            - item: Rudder/elevator cotter pins
               command: Secure
 
 right:
@@ -127,7 +129,7 @@ right:
               command: Clear
             - item: Wing/fuselage fairing
               command: Check
-            - item: Door lock
+            - item: Passenger door
               command: Unlocked
             - item: Wheel fairings
               command: Security, free of debris
@@ -144,15 +146,15 @@ right:
               command: Condition and movement
             - item: Aileron gap seal
               command: Security
-            - item: Hinges, actuation arm, bolts, and cotter pins
+            - item: Aileron cotter pins
               command: Secure
-            - item: Wing Tip
+            - item: Wing tip
               command: Attachment
-            - item: Strobe and Nav Light
+            - item: Strobe and nav light
               command: Condition and security
             - item: Fuel vent
               command: Unobstructed
-            - item: Leading edge and stall strips
+            - item: Leading edge, stall strips
               command: Condition
             - item: Fuel cap
               command: Check quantity and secure
@@ -185,8 +187,6 @@ right:
               command: Condition, security, oil leaks
             - item: Air inlets
               command: Unobstructed
-            - item: Alternator
-              command: Condition
             - item: Propeller
               command: Condition (indentations, nicks)
             - item: Alternator
@@ -199,21 +199,19 @@ right:
               command: Leaks, cap + door secure
             - item: Cowling
               command: Attachments secure
-            - item: External power
-              command: Disconnected, door secure
             - item: Exhaust pipe
               command: Condition, security, clearance
 
         - subsection: Fuel
           tasks:
             - item: Left fuel drains
-              command: Drained + sampled
+              command: Sampled
               annotation: 2 drains
             - item: Right fuel drains
-              command: Drained + sampled
+              command: Sampled
               annotation: 2 drains
             - item: Gascolator
-              command: Sampled + drained for 3 seconds
+              command: Sampled for 3 seconds
 
     - name: Securing Airplane
       tasks:
@@ -237,5 +235,7 @@ right:
           command: Cleaned
         - item: FlightCircle
           command: Check in
+        - item: Tug
+          command: Charging
         - item: Logbook
           command: Entered
