@@ -1,6 +1,11 @@
 name: N549SR Flight Checklist
-accent_color: "#000000"
-spacing: 1.00
+accent_color: "#335797"
+command_width: 1.5in
+spacing: 1.1
+header:
+  left: PFFC
+  center: N549SR - 2006 Cirrus SR22
+  right: Version 1.0
 left:
   sections:
     - name: Engine Start
@@ -30,11 +35,11 @@ left:
             - item: Propeller area
               command: Clear
             - item: Power lever
-              command: Open 1/4 inch
+              command: Open 1/4 in.
             - item: Ignition switch
-              command: Start release after engine starts
+              command: Start
             - item: Power lever
-              command: Retard to maintain 1000 RPM
+              command: Maintain 1000 RPM
             - item: Oil pressure
               command: Check
             - item: ALT master switches
@@ -103,7 +108,7 @@ left:
               command: On
             - item: Annunciator lights
               command: Check
-            - item: Voltage
+            - item: Voltage/ammeter/alternator
               command: Check
             - item: Pitot heat
               command: As required
@@ -112,7 +117,7 @@ left:
             - item: Magnetos
               command: Left only / Right only
             - item: RPM drop
-              command: ≤150 RPM / ≤75 between mags
+              command: Drop ≤150 RPM, Between mags ≤75
             - item: Engine parameters
               command: Check
             - item: Power lever
@@ -130,11 +135,12 @@ left:
       tasks:
         - item: Runway, crosswind
           command: Briefed
-        - item: Rotate, climb
-          command: 70-73 KIAS, 80 KIAS
+        - item: Rotation speed
+          command: 70-73 KIAS
+        - item: Climb-out speed
+          command: 80-90 KIAS
         - item: Takeoff emergency
-          command: Hard push
-          annotation: < 500' / > 500' / > 2000'
+          command: <500' / >500' / >2000'
         - item: CAPs available
           command: 500 ft. AGL
         - item: GoPro
@@ -150,8 +156,8 @@ right:
         - item: Engine parameters
           command: Check
         - item: Elevator control
-          command: Rotate smoothly, 70-73 KIAS
-        - item: At 80 KIAS
+          command: Rotate 70-73 KIAS
+        - item: 80-90 KIAS
           command: Flaps up
 
     - name: Short Field Takeoff
@@ -167,7 +173,9 @@ right:
         - item: Engine parameters
           command: Check
         - item: Brakes
-          command: Release steer with rudder only
+          command: Release
+        - item: Rudder
+          command: Steer with rudder only
         - item: Elevator control
           command: Rotate smoothly, 70 KIAS
         - item: Airspeed at obstacle
@@ -180,7 +188,7 @@ right:
         - item: Flaps
           command: Verify up
         - item: Mixture
-          command: Lean as required for altitude
+          command: Lean as required
         - item: Engine parameters
           command: Check
         - item: Fuel Pump

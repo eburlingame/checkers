@@ -23,6 +23,7 @@ const Separator = styled.span`
 `;
 
 const Command = styled.span<{ width: string }>`
+  margin-left: 0.1em;
   display: flex;
   width: ${(props) => props.width};
   font-weight: 500;
@@ -48,7 +49,7 @@ const DoItem = ({ task }: DoItemProps) => {
     <Item>
       <Text>
         <div>{task.item}</div>
-        <Separator />
+        <Separator></Separator>
       </Text>
       <Command width={checklist?.command_width || "1.2in"}>
         <CommandText style={{ flex: "1" }}>{task.command}</CommandText>

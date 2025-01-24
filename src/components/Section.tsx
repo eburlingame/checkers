@@ -6,16 +6,15 @@ const SectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0px;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.25em;
 `;
 
 const Header = styled.h2`
   text-transform: uppercase;
   border-top: 3px solid black;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 600;
   margin: 0;
-  margin-bottom: 0.25em;
 `;
 
 export type SectionProps = {
