@@ -20,10 +20,19 @@ export type ChecklistColumn = {
   sections: Section[];
 };
 
+export type ChecklistHeader = {
+  left: string;
+  center: string;
+  right: string;
+};
+
 export type Checklist = {
   name: string;
   accent_color?: string;
+  command_width?: string;
   spacing?: string;
+  header?: ChecklistHeader;
+
   left: ChecklistColumn;
   right: ChecklistColumn;
 };

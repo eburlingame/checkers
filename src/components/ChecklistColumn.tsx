@@ -1,12 +1,14 @@
 import { useChecklist } from "@/hooks";
 import { ChecklistColumn } from "@/types";
 import styled from "styled-components";
+import ColumnHeader from "./ColumnHeader";
 import Section from "./Section";
 
 const ColumnContainer = styled.div`
   row-gap: 0px;
-  height: 9.75in;
-  width: 3.875in;
+  height: 11in;
+  width: 4.25in;
+
   padding: 0.05in;
   padding-left: 1em;
   padding-right: 1em;
@@ -16,14 +18,14 @@ const ColumnContainer = styled.div`
   align-items: stretch;
 
   @media screen {
-    border: 0.5px solid black;
+    border-left: 0.1px solid black;
+    border-right: 0.1px solid black;
   }
 `;
 
-const Footer = styled.div`
-  margin-top: auto;
-  font-size: 8pt;
-  text-align: center;
+const SectionsContainer = styled.div<{ accentColor: string }>`
+  border: 0.5em solid ${({ accentColor }) => accentColor};
+  padding: 0.5em;
 `;
 
 export type ChecklistColumnProps = {
@@ -35,11 +37,13 @@ const ChecklistColumnComponent = ({ column }: ChecklistColumnProps) => {
 
   return (
     <ColumnContainer>
-      {column.sections.map((section) => (
-        <Section key={section.name} section={section} />
-      ))}
+      <ColumnHeader checklist={checklist} />
 
-      <Footer>{checklist.name}</Footer>
+      <SectionsContainer accentColor={checklist.accent_color || "#000000"}>
+        {column.sections.map((section) => (
+          <Section key={section.name} section={section} />
+        ))}
+      </SectionsContainer>
     </ColumnContainer>
   );
 };

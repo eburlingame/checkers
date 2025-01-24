@@ -38,6 +38,7 @@ const TaskContainer = styled.div<{ lineSpacing?: string }>`
   display: flex;
   flex-direction: column;
   row-gap: 0px;
+  padding: 0px;
   line-height: ${(props) => props.lineSpacing || "1.025"};
 `;
 
@@ -51,9 +52,11 @@ const SubsectionComponent = ({ title, tasks }: SubsectionProps) => {
 
   return (
     <SubsectionContainer>
-      <SubsectionLabel className={robotoCondensed.className}>
-        {title}
-      </SubsectionLabel>
+      {title && (
+        <SubsectionLabel className={robotoCondensed.className}>
+          {title}
+        </SubsectionLabel>
+      )}
       <TaskContainer lineSpacing={checklist.spacing}>
         {tasks.map((task) => (
           <DoItem key={task.item} task={task} />

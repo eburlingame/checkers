@@ -1,11 +1,16 @@
 name: N549SR Ground Checklist
-accent_color: "#545454"
-spacing: 1.1
+accent_color: "#308e32"
+command_width: 1.27in
+spacing: 1.22
+header:
+  left: PFFC
+  center: N549SR - 2006 Cirrus SR22
+  right: Version 1.0
 left:
   sections:
     - name: Preflight Inspection
       tasks:
-        - item: Stall warning sucker
+        - item: Stall warning tester
           command: Retrieve
         - item: ARROW documents
           command: Verify
@@ -54,169 +59,169 @@ left:
 
     - name: Walk-Around
       tasks:
-        - subsection: Left Wing
-          tasks:
-            - item: External power
-              command: Disconnected, door secure
-            - item: Cabin air vent
-              command: Unobstructed
-            - item: Fuel cap
-              command: Check quantity and secure
-            - item: Leading edge, stall strips
-              command: Condition
-            - item: Fuel vent
-              command: Unobstructed
-            - item: Pitot mast
-              command: Cover removed, tube clear
-            - item: Strobe and nav light
-              command: Condition and security
-            - item: Wing tip
-              command: Attachment
-            - item: Flap and rub strips
-              command: Condition and security
-            - item: Aileron
-              command: Freedom of movement
-            - item: Aileron gap seal
-              command: Security
-            - item: Aileron cotter pins
-              command: Secure
-            - item: Wheel fairings
-              command: Security, clear of debris
-            - item: Tire
-              command: Condition, inflation, wear
-            - item: Wheel and brakes
-              command: Fluid, leaks, overheating, condition
-            - item: Chocks / tiedowns
-              command: Removed
-
         - subsection: Left Fuselage
           tasks:
-            - item: COM 1 Antenna
-              command: Condition and attachment
+            - item: Door lock
+              command: Unlock
+            - item: COM 1 antenna
+              command: Condition
             - item: Wing/fuselage fairing
               command: Check
             - item: COM 2 antenna
-              command: Condition and attachment
+              command: Condition
             - item: Baggage door
-              command: Closed and secure
+              command: Closed & secure
             - item: Static button
-              command: Clear
+              command: Check for blockage
             - item: Parachute cover
-              command: Sealed and secure
-
+              command: Sealed & secure
         - subsection: Empennage
           tasks:
-            - item: Tiedowns
-              command: Removed
-            - item: Horizontal/vertical stabilizers
+            - item: Tiedown rope
+              command: Remove
+            - item: Horizontal and vertical stabilizers
               command: Condition
             - item: Elevator and tab
-              command: Condition and movement
+              command: Condition/movement
             - item: Rudder
-              command: Freedom of movement
+              command: Condition/Movement
             - item: Rudder trim tab
-              command: Condition and security
-            - item: Rudder/elevator cotter pins
+              command: Condition
+            - item: Rudder hinges/bolts/cotter pins
               command: Secure
+        - subsection: Right Fuselage and Wing
+          tasks:
+            - item: Static button
+              command: Check for blockage
+            - item: Wing/fuselage fairings
+              command: Check
+            - item: Door lock
+              command: Unlock
+            - item: Flap and rub strips
+              command: Condition
+            - item: Right aileron
+              command: Full travel
+            - item: Aileron gap seal
+              command: Security
+            - item: Aileron hinges/bolts/cotter pins
+              command: Secure
+            - item: Right wing tip
+              command: Attachment
+            - item: Strobe, nav light and lens
+              command: Condition
+            - item: Fuel vent
+              command: Unobstructed
+            - item: Leading edge and stall strips
+              command: Condition
+            - item: Fuel cap
+              command: Quantity & security
+            - item: Wheel fairings
+              command: Security & condition
+            - item: Tire
+              command: Condition/inflation
+            - item: Wheel and brakes
+              command: Leaks/Overheating
+            - item: Chocks and tiedown ropes
+              command: Remove
+            - item: Cabin air vent
+              command: Unobstructed
 
 right:
   sections:
     - name: Walk-Around (cont.)
       tasks:
-        - subsection: Right fuselage
-          tasks:
-            - item: Static button
-              command: Clear
-            - item: Wing/fuselage fairing
-              command: Check
-            - item: Passenger door
-              command: Unlocked
-            - item: Wheel fairings
-              command: Security, free of debris
-            - item: Tire
-              command: Condition, inflation, wear
-            - item: Wheel and brakes
-              command: Fluid, leaks, overheating, condition
-
-        - subsection: Right wing
-          tasks:
-            - item: Flap and rub strips
-              command: Condition and security
-            - item: Aileron and tab
-              command: Condition and movement
-            - item: Aileron gap seal
-              command: Security
-            - item: Aileron cotter pins
-              command: Secure
-            - item: Wing tip
-              command: Attachment
-            - item: Strobe and nav light
-              command: Condition and security
-            - item: Fuel vent
-              command: Unobstructed
-            - item: Leading edge, stall strips
-              command: Condition
-            - item: Fuel cap
-              command: Check quantity and secure
-            - item: Chocks / tiedowns
-              command: Removed
-            - item: Cabin air vent
-              command: Unobstructed
-
-        - subsection: Nose
+        - subsection: Nose and Prop
           tasks:
             - item: Vortex generator
               command: Condition
             - item: Cowling
               command: Attachments secure
             - item: Exhaust pipe
-              command: Condition, security, clearance
+              command: Condition & security
             - item: Transponder antenna
-              command: Condition and attachment
+              command: Condition
             - item: Tow bar
-              command: Removed and stowed
+              command: Remove and stow
             - item: Strut
               command: Condition
-            - item: Wheel fairing
-              command: Security, free of debris
-            - item: Wheel and tire
-              command: Condition, inflation, wear
+            - item: Nose wheel fairing
+              command: Security & condition
+            - item: Nose wheel and tire
+              command: Condition/inflation
             - item: Propeller
-              command: Condition (indentations, nicks)
+              command: Condition
             - item: Spinner
-              command: Condition, security, oil leaks
+              command: Condition/oil leaks
             - item: Air inlets
               command: Unobstructed
-            - item: Propeller
-              command: Condition (indentations, nicks)
             - item: Alternator
               command: Condition
             - item: Landing light
               command: Condition
-            - item: Engine oil
-              command: Check 6-8 quarts
+            - item: Engine oil level
+              command: Check 6-8 QUARTS
             - item: Engine oil door
-              command: Leaks, cap + door secure
+              command: Leaks/door secure
             - item: Cowling
               command: Attachments secure
-            - item: Exhaust pipe
-              command: Condition, security, clearance
+            - item: External power
+              command: Door secure
+            - item: Vortex generator
+              command: Condition
+            - item: Exhaust pipe(s)
+              command: Condition & security
+        - subsection: Left Wing
+          tasks:
+            - item: Wheel fairings
+              command: Security & condition
+            - item: Tire
+              command: Condition/inflation
+            - item: Wheel and brakes
+              command: Leaks/Overheating
+            - item: Chocks and tiedown ropes
+              command: Remove
+            - item: Fuel drains
+              command: Drain and sample
+            - item: Cabin air vent
+              command: Unobstructed
+            - item: Fuel cap
+              command: Quantity & security
+            - item: Leading edge and stall strips
+              command: Condition
+            - item: Fuel vent
+              command: Unobstructed
+            - item: Pitot mast
+              command: Cover off/Tube clear
+            - item: Strobe, nav light and lens
+              command: Condition
+            - item: Left wing tip
+              command: Attachment
+            - item: Flap and rub strips
+              command: Condition
+            - item: Left aileron
+              command: Full travel
+            - item: Aileron gap seal
+              command: Security
+            - item: Aileron hinges/bolts/cotter pins
+              command: Secure
 
         - subsection: Fuel
           tasks:
             - item: Left fuel drains
               command: Sampled
-              annotation: 2 drains
+              annotation: (2 drains)
             - item: Right fuel drains
               command: Sampled
-              annotation: 2 drains
+              annotation: (2 drains)
             - item: Gascolator
-              command: Sampled for 3 seconds
+              command: Sampled for 3 SEC.
 
     - name: Securing Airplane
       tasks:
         - item: ELT
           command: Transmit light out
+        - item: Parking brake
+          command: As required
         - item: Hobbs + flight time
           command: Recorded
         - item: Pitot tube cover
