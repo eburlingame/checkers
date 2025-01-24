@@ -117,7 +117,7 @@ left:
             - item: Magnetos
               command: Left only / Right only
             - item: RPM drop
-              command: Drop ≤150 RPM, Between mags ≤75
+              command: ≤150 RPM, ≤75 RPM between mags
             - item: Engine parameters
               command: Check
             - item: Power lever

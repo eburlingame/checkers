@@ -9,15 +9,19 @@ const robotoCondensed = Roboto_Condensed({
   subsets: ["latin"],
 });
 
-const SubsectionContainer = styled.div`
+const SubsectionContainer = styled.div<{
+  orientation?: "horizontal" | "vertical";
+}>`
   position: relative;
   display: flex;
+  flex-direction: ${(props) =>
+    props.orientation === "vertical" ? "row" : "column"};
   align-items: stretch;
   width: 100%;
   margin-bottom: 0.3em;
 `;
 
-const SubsectionLabel = styled.div`
+const VerticalSubsectionLabel = styled.div`
   width: 1.2em;
   text-transform: uppercase;
 
@@ -32,9 +36,20 @@ const SubsectionLabel = styled.div`
   border-left: 1px solid black;
 `;
 
-const TaskContainer = styled.div<{ lineSpacing?: string }>`
+const HorizontalSubsectionLabel = styled.div`
+  font-size: 9pt;
+  margin-left: 0.5em;
+  font-weight: 500;
+  line-height: 1.1;
+`;
+
+const TaskContainer = styled.div<{
+  lineSpacing?: string;
+  orientation?: "horizontal" | "vertical";
+}>`
   flex: 1;
-  margin-left: 0.75em;
+  margin-left: ${(props) =>
+    props.orientation === "horizontal" ? "1em" : "0.75em"};
   display: flex;
   flex-direction: column;
   row-gap: 0px;
@@ -44,20 +59,30 @@ const TaskContainer = styled.div<{ lineSpacing?: string }>`
 
 export type SubsectionProps = {
   title?: string;
+  orientation?: "horizontal" | "vertical";
   tasks: BasicTask[];
 };
 
-const SubsectionComponent = ({ title, tasks }: SubsectionProps) => {
+const SubsectionComponent = ({
+  title,
+  orientation,
+  tasks,
+}: SubsectionProps) => {
   const checklist = useChecklist();
 
   return (
-    <SubsectionContainer>
-      {title && (
-        <SubsectionLabel className={robotoCondensed.className}>
+    <SubsectionContainer orientation={orientation}>
+      {title && orientation === "vertical" && (
+        <VerticalSubsectionLabel className={robotoCondensed.className}>
           {title}
-        </SubsectionLabel>
+        </VerticalSubsectionLabel>
       )}
-      <TaskContainer lineSpacing={checklist.spacing}>
+
+      {title && orientation === "horizontal" && (
+        <HorizontalSubsectionLabel>{title}</HorizontalSubsectionLabel>
+      )}
+
+      <TaskContainer lineSpacing={checklist.spacing} orientation={orientation}>
         {tasks.map((task) => (
           <DoItem key={task.item} task={task} />
         ))}

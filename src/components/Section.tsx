@@ -1,6 +1,6 @@
-import { BasicTask, Section } from "@/types";
+import { Section, Subsection, Task } from "@/types";
 import styled from "styled-components";
-import Subsection from "./Subsection";
+import { default as SubsectionComponent } from "./Subsection";
 
 const SectionContainer = styled.div`
   display: flex;
@@ -21,30 +21,44 @@ export type SectionProps = {
   section: Section;
 };
 
+const renderedSubsections = (tasks: Task[]): Subsection[] => {
+  let topLevelSubsections: Subsection = { subsection: "", tasks: [] };
+  const subsections = [];
+
+  for (const task of tasks) {
+    if ("subsection" in task) {
+      subsections.push(topLevelSubsections);
+      topLevelSubsections = { subsection: "", tasks: [] };
+
+      subsections.push(task);
+    } else if ("item" in task) {
+      topLevelSubsections.tasks.push(task);
+    }
+  }
+
+  if (topLevelSubsections.tasks.length > 0) {
+    subsections.push(topLevelSubsections);
+  }
+
+  return subsections;
+};
+
 const SectionComponent = ({ section }: SectionProps) => {
-  const hasSubsections = section.tasks.some((task) => "subsection" in task);
+  const subsections = renderedSubsections(section.tasks);
 
   return (
     <>
       <Header>{section.name}</Header>
 
       <SectionContainer>
-        {hasSubsections ? (
-          section.tasks.map((task) => {
-            if ("subsection" in task) {
-              return (
-                <Subsection
-                  key={task.subsection}
-                  title={task.subsection}
-                  tasks={task.tasks}
-                />
-              );
-            }
-            return <></>;
-          })
-        ) : (
-          <Subsection tasks={section.tasks as BasicTask[]} />
-        )}
+        {subsections.map((task) => (
+          <SubsectionComponent
+            key={task.subsection}
+            title={task.subsection}
+            orientation={task.orientation || "vertical"}
+            tasks={task.tasks}
+          />
+        ))}
       </SectionContainer>
     </>
   );

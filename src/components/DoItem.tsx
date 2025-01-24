@@ -1,8 +1,9 @@
 import { useChecklist } from "@/hooks";
 import { BasicTask } from "@/types";
+import { Fragment } from "react";
 import styled from "styled-components";
 
-const Item = styled.div`
+const Container = styled.div`
   display: flex;
   align-items: baseline;
   width: 100%;
@@ -10,7 +11,13 @@ const Item = styled.div`
   font-size: 9pt;
 `;
 
-const Text = styled.span`
+const Standalone = styled.span`
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  flex: 1;
+`;
+
+const ItemContainer = styled.span`
   flex: 1;
   display: flex;
 `;
@@ -19,19 +26,20 @@ const Separator = styled.span`
   font-weight: 600;
   flex: 1;
   border-bottom: 2px dotted black;
-  margin-bottom: 0.27em;
+  margin-bottom: 0.2em;
+  min-width: 1em;
 `;
 
-const Command = styled.span<{ width: string }>`
+const CommandContainer = styled.span<{ width: string }>`
   margin-left: 0.1em;
   display: flex;
   width: ${(props) => props.width};
   font-weight: 500;
-  text-transform: uppercase;
 `;
 
 const CommandText = styled.span`
   flex-grow: 1;
+  text-transform: uppercase;
 `;
 
 const Annotation = styled.span`
@@ -45,17 +53,41 @@ export type DoItemProps = {
 const DoItem = ({ task }: DoItemProps) => {
   const checklist = useChecklist();
 
+  if (
+    task.command === null ||
+    task.command === undefined ||
+    task.command === ""
+  ) {
+    return (
+      <Container>
+        <Standalone>{task.item}</Standalone>
+      </Container>
+    );
+  }
+
+  const renderMultilineText = (text: string) => {
+    return text.split("\\n").map((line, index) => (
+      <Fragment key={index}>
+        {line}
+        <br />
+      </Fragment>
+    ));
+  };
+
   return (
-    <Item>
-      <Text>
-        <div>{task.item}</div>
+    <Container>
+      <ItemContainer>
+        {renderMultilineText(task.item)}
         <Separator></Separator>
-      </Text>
-      <Command width={checklist?.command_width || "1.2in"}>
-        <CommandText style={{ flex: "1" }}>{task.command}</CommandText>
+      </ItemContainer>
+
+      <CommandContainer width={checklist?.command_width || "1.2in"}>
+        <CommandText style={{ flex: "1" }}>
+          {renderMultilineText(task.command)}
+        </CommandText>
         {task.annotation && <Annotation>{task.annotation}</Annotation>}
-      </Command>
-    </Item>
+      </CommandContainer>
+    </Container>
   );
 };
 

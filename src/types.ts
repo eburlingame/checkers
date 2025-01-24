@@ -6,6 +6,7 @@ export type BasicTask = {
 
 export type Subsection = {
   subsection: string;
+  orientation?: "horizontal" | "vertical";
   tasks: BasicTask[];
 };
 
