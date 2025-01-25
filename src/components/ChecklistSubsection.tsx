@@ -1,8 +1,8 @@
 import { useOptions } from "@/hooks";
-import { BasicTask } from "@/types";
+import { getBlockId, Subsection } from "@/types";
 import { Roboto_Condensed } from "next/font/google";
 import styled from "styled-components";
-import ChecklistItem from "./ChecklistItem";
+import ChecklistBlock from "./ChecklistBlock";
 
 const robotoCondensed = Roboto_Condensed({
   variable: "--font-roboto-condensed",
@@ -33,7 +33,7 @@ const VerticalSubsectionLabel = styled.div`
   transform: rotate(180deg);
   writing-mode: vertical-rl;
 
-  border-left: 1px solid black;
+  border-left: 2px solid black;
 `;
 
 const HorizontalSubsectionLabel = styled.div`
@@ -57,17 +57,12 @@ const TaskContainer = styled.div<{
   line-height: ${(props) => props.lineSpacing || "1.025"};
 `;
 
-export type SubsectionProps = {
-  title?: string;
-  orientation?: "horizontal" | "vertical";
-  tasks: BasicTask[];
+export type ChecklistSubsectionProps = {
+  subsection: Subsection;
 };
 
-const SubsectionComponent = ({
-  title,
-  orientation,
-  tasks,
-}: SubsectionProps) => {
+const ChecklistSubsection = ({ subsection }: ChecklistSubsectionProps) => {
+  const { subsection: title, orientation = "vertical", blocks } = subsection;
   const options = useOptions();
 
   return (
@@ -83,12 +78,12 @@ const SubsectionComponent = ({
       )}
 
       <TaskContainer lineSpacing={options.spacing} orientation={orientation}>
-        {tasks.map((task) => (
-          <ChecklistItem key={task.item} task={task} />
+        {blocks.map((block) => (
+          <ChecklistBlock key={getBlockId(block)} block={block} />
         ))}
       </TaskContainer>
     </SubsectionContainer>
   );
 };
 
-export default SubsectionComponent;
+export default ChecklistSubsection;

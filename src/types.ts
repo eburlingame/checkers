@@ -1,25 +1,55 @@
-export type BasicTask = {
+export type Task = {
   item: string;
   command: string;
   annotation?: string;
   boxed?: boolean;
 };
 
+export type TableItem = {
+  label: string;
+  value: string;
+};
+
+export type Table = {
+  table: string;
+  items: TableItem[];
+};
+
 export type Subsection = {
   subsection: string;
   orientation?: "horizontal" | "vertical";
-  tasks: BasicTask[];
+  blocks: Block[];
 };
 
-export type Task = BasicTask | Subsection;
-
 export type Section = {
-  name: string;
-  tasks: Task[];
+  section: string;
+  blocks: Block[];
+};
+
+export type Block = Section | Subsection | Table | Task;
+
+export const getBlockId = (block: Block): string => {
+  if ("item" in block) {
+    return block.item;
+  }
+
+  if ("section" in block) {
+    return block.section;
+  }
+
+  if ("subsection" in block) {
+    return block.subsection;
+  }
+
+  if ("table" in block) {
+    return block.table;
+  }
+
+  return "";
 };
 
 export type ChecklistColumn = {
-  sections: Section[];
+  blocks: Block[];
   options?: ChecklistOptions;
 };
 

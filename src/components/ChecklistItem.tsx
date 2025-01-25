@@ -1,14 +1,19 @@
 import { useOptions } from "@/hooks";
-import { BasicTask } from "@/types";
+import { Task } from "@/types";
 import { Fragment } from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.div<{ boxed?: boolean }>`
   display: flex;
   align-items: baseline;
   width: 100%;
   font-weight: 400;
   font-size: 9pt;
+
+  border: ${(props) => (props.boxed ? "1px solid #000" : "none")};
+  border-radius: ${(props) => (props.boxed ? "0.2em" : "0")};
+  padding: ${(props) => (props.boxed ? "0.1em" : "0")};
+  margin-bottom: ${(props) => (props.boxed ? "0.1em" : "0")};
 `;
 
 const Standalone = styled.span`
@@ -30,7 +35,7 @@ const Separator = styled.span`
   min-width: 1em;
 `;
 
-const CommandContainer = styled.span<{ width: string }>`
+const CommandContainer = styled.span<{ width: string; boxed?: boolean }>`
   margin-left: 0.1em;
   display: flex;
   width: ${(props) => props.width};
@@ -47,7 +52,7 @@ const Annotation = styled.span`
 `;
 
 export type DoItemProps = {
-  task: BasicTask;
+  task: Task;
 };
 
 const ChecklistItem = ({ task }: DoItemProps) => {
@@ -59,7 +64,7 @@ const ChecklistItem = ({ task }: DoItemProps) => {
     task.command === ""
   ) {
     return (
-      <Container>
+      <Container boxed={task.boxed}>
         <Standalone>{task.item}</Standalone>
       </Container>
     );
@@ -75,7 +80,7 @@ const ChecklistItem = ({ task }: DoItemProps) => {
   };
 
   return (
-    <Container>
+    <Container boxed={task.boxed}>
       <ItemContainer>
         {renderMultilineText(task.item)}
         <Separator></Separator>

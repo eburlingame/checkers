@@ -1,12 +1,14 @@
-import { Section, Subsection, Task } from "@/types";
+import { useOptions } from "@/hooks";
+import { getBlockId, Section } from "@/types";
 import styled from "styled-components";
-import { default as SubsectionComponent } from "./ChecklistSubsection";
+import ChecklistBlock from "./ChecklistBlock";
 
-const SectionContainer = styled.div`
+const SectionContainer = styled.div<{ lineSpacing?: string }>`
   display: flex;
   flex-direction: column;
   row-gap: 0px;
   margin-bottom: 0.25em;
+  line-height: ${(props) => props.lineSpacing || "1.025"};
 `;
 
 const Header = styled.h2`
@@ -21,43 +23,16 @@ export type ChecklistSectionProps = {
   section: Section;
 };
 
-const renderedSubsections = (tasks: Task[]): Subsection[] => {
-  let topLevelSubsections: Subsection = { subsection: "", tasks: [] };
-  const subsections = [];
-
-  for (const task of tasks) {
-    if ("subsection" in task) {
-      subsections.push(topLevelSubsections);
-      topLevelSubsections = { subsection: "", tasks: [] };
-
-      subsections.push(task);
-    } else if ("item" in task) {
-      topLevelSubsections.tasks.push(task);
-    }
-  }
-
-  if (topLevelSubsections.tasks.length > 0) {
-    subsections.push(topLevelSubsections);
-  }
-
-  return subsections;
-};
-
 const ChecklistSection = ({ section }: ChecklistSectionProps) => {
-  const subsections = renderedSubsections(section.tasks);
+  const { section: title, blocks } = section;
+  const options = useOptions();
 
   return (
     <>
-      <Header>{section.name}</Header>
-
-      <SectionContainer>
-        {subsections.map((task) => (
-          <SubsectionComponent
-            key={task.subsection}
-            title={task.subsection}
-            orientation={task.orientation || "vertical"}
-            tasks={task.tasks}
-          />
+      <Header>{title}</Header>
+      <SectionContainer lineSpacing={options.spacing}>
+        {blocks.map((block) => (
+          <ChecklistBlock key={getBlockId(block)} block={block} />
         ))}
       </SectionContainer>
     </>

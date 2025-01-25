@@ -1,8 +1,8 @@
 import { OptionsContext, useOptions } from "@/hooks";
-import { ChecklistColumn } from "@/types";
+import { ChecklistColumn, getBlockId } from "@/types";
 import styled from "styled-components";
+import ChecklistBlock from "./ChecklistBlock";
 import ColumnHeader from "./ChecklistColumnHeader";
-import Section from "./ChecklistSection";
 
 const ColumnContainer = styled.div`
   row-gap: 0px;
@@ -42,8 +42,8 @@ const ChecklistColumnComponent = ({ column }: ChecklistColumnProps) => {
         <ColumnHeader options={options} />
 
         <SectionsContainer accentColor={options.accent_color || "#000000"}>
-          {column.sections.map((section) => (
-            <Section key={section.name} section={section} />
+          {column.blocks.map((block) => (
+            <ChecklistBlock key={getBlockId(block)} block={block} />
           ))}
         </SectionsContainer>
       </ColumnContainer>
