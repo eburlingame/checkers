@@ -1,4 +1,4 @@
-import { useChecklist } from "@/hooks";
+import { OptionsContext, useOptions } from "@/hooks";
 import { ChecklistColumn } from "@/types";
 import styled from "styled-components";
 import ColumnHeader from "./ColumnHeader";
@@ -33,18 +33,21 @@ export type ChecklistColumnProps = {
 };
 
 const ChecklistColumnComponent = ({ column }: ChecklistColumnProps) => {
-  const checklist = useChecklist();
+  const upperOptions = useOptions();
+  const options = { ...upperOptions, ...column.options };
 
   return (
-    <ColumnContainer>
-      <ColumnHeader checklist={checklist} />
+    <OptionsContext.Provider value={options}>
+      <ColumnContainer>
+        <ColumnHeader options={options} />
 
-      <SectionsContainer accentColor={checklist.accent_color || "#000000"}>
-        {column.sections.map((section) => (
-          <Section key={section.name} section={section} />
-        ))}
-      </SectionsContainer>
-    </ColumnContainer>
+        <SectionsContainer accentColor={options.accent_color || "#000000"}>
+          {column.sections.map((section) => (
+            <Section key={section.name} section={section} />
+          ))}
+        </SectionsContainer>
+      </ColumnContainer>
+    </OptionsContext.Provider>
   );
 };
 

@@ -1,4 +1,4 @@
-import { useChecklist } from "@/hooks";
+import { useOptions } from "@/hooks";
 import { BasicTask } from "@/types";
 import { Roboto_Condensed } from "next/font/google";
 import styled from "styled-components";
@@ -68,7 +68,7 @@ const SubsectionComponent = ({
   orientation,
   tasks,
 }: SubsectionProps) => {
-  const checklist = useChecklist();
+  const options = useOptions();
 
   return (
     <SubsectionContainer orientation={orientation}>
@@ -82,7 +82,7 @@ const SubsectionComponent = ({
         <HorizontalSubsectionLabel>{title}</HorizontalSubsectionLabel>
       )}
 
-      <TaskContainer lineSpacing={checklist.spacing} orientation={orientation}>
+      <TaskContainer lineSpacing={options.spacing} orientation={orientation}>
         {tasks.map((task) => (
           <DoItem key={task.item} task={task} />
         ))}

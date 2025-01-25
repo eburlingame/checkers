@@ -1,14 +1,13 @@
 import { createContext, useContext } from "react";
-import { Checklist } from "./types";
+import { Checklist, ChecklistOptions } from "./types";
 
 export const ChecklistContext = createContext<Checklist>({
-  name: "",
-  left: {
-    sections: [],
-  },
-  right: {
-    sections: [],
-  },
+  options: {},
+  pages: [],
 });
 
 export const useChecklist = () => useContext(ChecklistContext);
+
+export const OptionsContext = createContext<ChecklistOptions>({});
+
+export const useOptions = () => useContext(OptionsContext);

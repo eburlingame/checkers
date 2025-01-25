@@ -1,5 +1,4 @@
-import ChecklistColumn from "@/components/ChecklistColumn";
-import { ChecklistContext } from "@/hooks";
+import Checklist from "@/components/Checklist";
 import { Checklist as ChecklistType } from "@/types";
 import { readdirSync, readFileSync } from "fs";
 import { GetStaticPropsContext } from "next";
@@ -15,9 +14,11 @@ const sourceSans = Source_Sans_3({
 
 const Main = styled.main`
   display: flex;
+  flex-direction: column;
   align-items: stretch;
   height: 100%;
   font-size: 10pt;
+  background-color: #111;
 `;
 
 export type HomeProps = {
@@ -35,10 +36,7 @@ export default function Home({ checklist }: HomeProps) {
       </Head>
 
       <Main className={sourceSans.className}>
-        <ChecklistContext.Provider value={checklist}>
-          <ChecklistColumn column={checklist.left} />
-          <ChecklistColumn column={checklist.right} />
-        </ChecklistContext.Provider>
+        <Checklist checklist={checklist} />
       </Main>
     </>
   );

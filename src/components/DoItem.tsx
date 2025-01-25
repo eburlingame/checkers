@@ -1,4 +1,4 @@
-import { useChecklist } from "@/hooks";
+import { useOptions } from "@/hooks";
 import { BasicTask } from "@/types";
 import { Fragment } from "react";
 import styled from "styled-components";
@@ -51,7 +51,7 @@ export type DoItemProps = {
 };
 
 const DoItem = ({ task }: DoItemProps) => {
-  const checklist = useChecklist();
+  const options = useOptions();
 
   if (
     task.command === null ||
@@ -81,7 +81,7 @@ const DoItem = ({ task }: DoItemProps) => {
         <Separator></Separator>
       </ItemContainer>
 
-      <CommandContainer width={checklist?.command_width || "1.2in"}>
+      <CommandContainer width={options?.command_width || "1.2in"}>
         <CommandText style={{ flex: "1" }}>
           {renderMultilineText(task.command)}
         </CommandText>

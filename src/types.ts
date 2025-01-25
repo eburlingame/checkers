@@ -19,6 +19,7 @@ export type Section = {
 
 export type ChecklistColumn = {
   sections: Section[];
+  options?: ChecklistOptions;
 };
 
 export type ChecklistHeader = {
@@ -27,13 +28,21 @@ export type ChecklistHeader = {
   right: string;
 };
 
-export type Checklist = {
+export type ChecklistPage = {
   name: string;
+  options?: ChecklistOptions;
+  left: ChecklistColumn;
+  right: ChecklistColumn;
+};
+
+export type ChecklistOptions = {
   accent_color?: string;
   command_width?: string;
   spacing?: string;
   header?: ChecklistHeader;
+};
 
-  left: ChecklistColumn;
-  right: ChecklistColumn;
+export type Checklist = {
+  options: ChecklistOptions;
+  pages: ChecklistPage[];
 };

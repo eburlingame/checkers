@@ -1,0 +1,529 @@
+name: N549SR Checklists
+options:
+  header:
+    left: PFFC
+    center: N549SR - 2006 Cirrus SR22
+    right: Version 1.0
+
+pages:
+  - name: Ground Checklist
+    options:
+      accent_color: "#308e32"
+      command_width: 1.27in
+      spacing: 1.22
+
+    left:
+      sections:
+        - name: Preflight Inspection
+          tasks:
+            - item: Stall warning tester
+              command: Retrieve
+            - item: ARROW documents
+              command: Verify
+            - item: Avionics master
+              command: Off
+            - item: BAT 2 master
+              command: On
+            - item: PFD
+              command: Verify on
+            - item: Avionics cooling fan
+              command: Audible
+            - item: Voltmeter
+              command: 23-25 V
+            - item: Flap position light
+              command: Out
+            - item: BAT 1
+              command: On
+            - item: Lights
+              command: Check
+            - item: Stall warning
+              command: Check
+            - item: Fuel quantity
+              command: Check
+            - item: Fuel selector
+              command: Fullest tank
+            - item: Flaps
+              command: 100%, check light on
+            - item: Oil annunciator
+              command: On
+            - item: BAT 1 and BAT 2
+              command: Off
+            - item: Alternate static source
+              command: Normal
+            - item: Circuit breakers
+              command: Check in
+            - item: Fire extinguisher
+              command: Charged and available
+            - item: Emergency egress hammer
+              command: Available
+            - item: CAPS handle
+              command: Pin removed
+            - item: Tach / Hobbs time
+              command: Recorded
+            - item: FlightCircle
+              command: Dispatched
+
+        - name: Walk-Around
+          tasks:
+            - subsection: Left Fuselage
+              tasks:
+                - item: Door lock
+                  command: Unlock
+                - item: COM 1 antenna
+                  command: Condition
+                - item: Wing/fuselage fairing
+                  command: Check
+                - item: COM 2 antenna
+                  command: Condition
+                - item: Baggage door
+                  command: Closed & secure
+                - item: Static button
+                  command: Check for blockage
+                - item: Parachute cover
+                  command: Sealed & secure
+            - subsection: Empennage
+              tasks:
+                - item: Tiedown rope
+                  command: Remove
+                - item: Horizontal and vertical stabilizers
+                  command: Condition
+                - item: Elevator and tab
+                  command: Condition/movement
+                - item: Rudder
+                  command: Condition/Movement
+                - item: Rudder trim tab
+                  command: Condition
+                - item: Rudder hinges/bolts/cotter pins
+                  command: Secure
+            - subsection: Right Fuselage and Wing
+              tasks:
+                - item: Static button
+                  command: Check for blockage
+                - item: Wing/fuselage fairings
+                  command: Check
+                - item: Door lock
+                  command: Unlock
+                - item: Flap and rub strips
+                  command: Condition
+                - item: Right aileron
+                  command: Full travel
+                - item: Aileron gap seal
+                  command: Security
+                - item: Aileron hinges/bolts/cotter pins
+                  command: Secure
+                - item: Right wing tip
+                  command: Attachment
+                - item: Strobe, nav light and lens
+                  command: Condition
+                - item: Fuel vent
+                  command: Unobstructed
+                - item: Leading edge and stall strips
+                  command: Condition
+                - item: Fuel cap
+                  command: Quantity & security
+                - item: Wheel fairings
+                  command: Security & condition
+                - item: Tire
+                  command: Condition/inflation
+                - item: Wheel and brakes
+                  command: Leaks/Overheating
+                - item: Chocks and tiedown ropes
+                  command: Remove
+                - item: Cabin air vent
+                  command: Unobstructed
+
+    right:
+      sections:
+        - name: Walk-Around (cont.)
+          tasks:
+            - subsection: Nose and Prop
+              tasks:
+                - item: Vortex generator
+                  command: Condition
+                - item: Cowling
+                  command: Attachments secure
+                - item: Exhaust pipe
+                  command: Condition & security
+                - item: Transponder antenna
+                  command: Condition
+                - item: Tow bar
+                  command: Remove and stow
+                - item: Strut
+                  command: Condition
+                - item: Nose wheel fairing
+                  command: Security & condition
+                - item: Nose wheel and tire
+                  command: Condition/inflation
+                - item: Propeller
+                  command: Condition
+                - item: Spinner
+                  command: Condition/oil leaks
+                - item: Air inlets
+                  command: Unobstructed
+                - item: Alternator
+                  command: Condition
+                - item: Landing light
+                  command: Condition
+                - item: Engine oil level
+                  command: Check 6-8 QUARTS
+                - item: Engine oil door
+                  command: Leaks/door secure
+                - item: Cowling
+                  command: Attachments secure
+                - item: External power
+                  command: Door secure
+                - item: Vortex generator
+                  command: Condition
+                - item: Exhaust pipe(s)
+                  command: Condition & security
+            - subsection: Left Wing
+              tasks:
+                - item: Wheel fairings
+                  command: Security & condition
+                - item: Tire
+                  command: Condition/inflation
+                - item: Wheel and brakes
+                  command: Leaks/Overheating
+                - item: Chocks and tiedown ropes
+                  command: Remove
+                - item: Fuel drains
+                  command: Drain and sample
+                - item: Cabin air vent
+                  command: Unobstructed
+                - item: Fuel cap
+                  command: Quantity & security
+                - item: Leading edge and stall strips
+                  command: Condition
+                - item: Fuel vent
+                  command: Unobstructed
+                - item: Pitot mast
+                  command: Cover off/Tube clear
+                - item: Strobe, nav light and lens
+                  command: Condition
+                - item: Left wing tip
+                  command: Attachment
+                - item: Flap and rub strips
+                  command: Condition
+                - item: Left aileron
+                  command: Full travel
+                - item: Aileron gap seal
+                  command: Security
+                - item: Aileron hinges/bolts/cotter pins
+                  command: Secure
+
+            - subsection: Fuel
+              tasks:
+                - item: Left fuel drains
+                  command: Sampled
+                  annotation: (2 drains)
+                - item: Right fuel drains
+                  command: Sampled
+                  annotation: (2 drains)
+                - item: Gascolator
+                  command: Sampled for 3 SEC.
+
+        - name: Securing Airplane
+          tasks:
+            - item: ELT
+              command: Transmit light out
+            - item: Parking brake
+              command: As required
+            - item: Hobbs + flight time
+              command: Recorded
+            - item: Pitot tube cover
+              command: Install
+            - item: Chocks
+              command: Install
+            - item: Tiedowns
+              command: As required
+            - item: Engine inlet plugs
+              command: Install
+            - item: Battery charger
+              command: Connected
+            - item: Windscreen
+              command: Cleaned
+            - item: Leading edge
+              command: Cleaned
+            - item: FlightCircle
+              command: Check in
+            - item: Tug
+              command: Charging
+            - item: Logbook
+              command: Entered
+
+  - name: Flight Checklist
+    options:
+      accent_color: "#335797"
+      command_width: 1.5in
+      spacing: 1.1
+
+    left:
+      sections:
+        - name: Engine Start
+          tasks:
+            - subsection: Before Start
+              tasks:
+                - item: Preflight inspection
+                  command: Completed
+                - item: Emergency equipment
+                  command: On board
+                - item: Passengers
+                  command: Briefed
+                - item: Seats and belts
+                  command: Adjusted and secure
+                - item: Brakes
+                  command: Hold
+                - item: BAT master switches
+                  command: On check volts
+                - item: Strobe lights
+                  command: On
+                - item: Mixture
+                  command: Full rich
+                - item: Power lever
+                  command: Full forward
+                - item: Fuel pump
+                  command: Prime then boost
+                - item: Propeller area
+                  command: Clear
+                - item: Power lever
+                  command: Open 1/4 in.
+                - item: Ignition switch
+                  command: Start
+                - item: Power lever
+                  command: Maintain 1000 RPM
+                - item: Oil pressure
+                  command: Check
+                - item: ALT master switches
+                  command: On
+                - item: Avionics power switch
+                  command: On
+                - item: Engine parameters
+                  command: Monitor
+                - item: Ammeter indication
+                  command: Check
+
+            - subsection: Taxi
+              tasks:
+                - item: Flaps
+                  command: Up
+                - item: Radios avionics
+                  command: As required
+                - item: Cabin heat defrost
+                  command: As required
+                - item: Fuel selector
+                  command: Switch tank
+                - item: Parking brake
+                  command: Disengage
+                - item: Brakes
+                  command: Check
+                - item: AHRS calibration
+                  command: Confirm
+
+            - subsection: Run up
+              tasks:
+                - item: Doors
+                  command: Latched
+                - item: CAPS handle
+                  command: Verify pin removed
+                - item: Seats and belts
+                  command: Secure
+                - item: Air conditioner
+                  command: As desired
+                - item: Fuel quantity
+                  command: Confirm
+                - item: Fuel selector
+                  command: Fullest tank
+                - item: Fuel pump
+                  command: Boost
+                - item: Mixture
+                  command: As required
+                - item: Flaps
+                  command: 50%, checked
+                - item: Transponder
+                  command: Set
+                - item: Autopilot
+                  command: Configured
+                - item: Nav/Radios/GPS
+                  command: Set for takeoff
+                - item: Cabin heat defrost
+                  command: As required
+                - item: Brakes
+                  command: Hold
+                - item: Power lever
+                  command: 1700 RPM
+                - item: Alternator
+                  command: Check
+                - item: Pitot heat
+                  command: On
+                - item: All lights
+                  command: On
+                - item: Annunciator lights
+                  command: Check
+                - item: Voltage/ammeter/alternator
+                  command: Check
+                - item: Pitot heat
+                  command: As required
+                - item: Lights
+                  command: As required
+                - item: Magnetos
+                  command: Left only / Right only
+                - item: RPM drop
+                  command: ≤150 RPM, ≤75 RPM between mags
+                - item: Engine parameters
+                  command: Check
+                - item: Power lever
+                  command: 1000 RPM
+                - item: Altimeter 1 & 2
+                  command: Baro set
+                - item: Flight controls
+                  command: Free and correct
+                - item: Trim
+                  command: Set for takeoff
+                - item: Autopilot
+                  command: Disconnected
+
+        - name: Departure briefing
+          tasks:
+            - item: Runway, crosswind
+              command: Briefed
+            - item: Rotation speed
+              command: 70-73 KIAS
+            - item: Climb-out speed
+              command: 80-90 KIAS
+            - item: Takeoff emergency
+              command: <500' / >500' / >2000'
+            - item: CAPs available
+              command: 500 ft. AGL
+            - item: GoPro
+              command: As req.
+
+    right:
+      sections:
+        - name: Normal Takeoff
+          tasks:
+            - item: Brakes
+              command: Release
+            - item: Power Lever
+              command: Full forward
+            - item: Engine parameters
+              command: Check
+            - item: Elevator control
+              command: Rotate 70-73 KIAS
+            - item: 80-90 KIAS
+              command: Flaps up
+
+        - name: Short Field Takeoff
+          tasks:
+            - item: Flaps
+              command: 50%
+            - item: Brakes
+              command: Hold
+            - item: Power lever
+              command: Full forward
+            - item: Mixture
+              command: Set
+            - item: Engine parameters
+              command: Check
+            - item: Brakes
+              command: Release
+            - item: Rudder
+              command: Steer with rudder only
+            - item: Elevator control
+              command: Rotate smoothly, 70 KIAS
+            - item: Airspeed at obstacle
+              command: 78 KIAS
+
+        - name: Climb
+          tasks:
+            - item: Climb Power
+              command: Set
+            - item: Flaps
+              command: Verify up
+            - item: Mixture
+              command: Lean as required
+            - item: Engine parameters
+              command: Check
+            - item: Fuel Pump
+              command: Boost
+
+        - name: Cruise
+          tasks:
+            - item: Fuel Pump
+              command: Off
+            - item: Cruise Power
+              command: Set
+            - item: Mixture
+              command: Lean as required
+            - item: Engine parameters
+              command: Monitor
+            - item: Fuel flow and balance
+              command: Monitor
+
+        - name: Descent
+          tasks:
+            - item: Altimeter
+              command: Set
+            - item: Cabin heat/defrost
+              command: As required
+            - item: Landing light
+              command: On
+            - item: Fuel system
+              command: Check
+            - item: Mixture
+              command: As required
+            - item: Brake pressure
+              command: Check
+
+        - name: Before Landing
+          tasks:
+            - item: Seats and belts
+              command: Secure
+            - item: Fuel Pump
+              command: Boost
+            - item: Mixture
+              command: As required
+            - item: Flaps
+              command: As required
+            - item: Autopilot
+              command: As required
+
+        - name: Go-Around
+          tasks:
+            - item: Autopilot
+              command: Disengage
+            - item: Power lever
+              command: Full forward
+            - item: Flaps
+              command: 50%
+            - item: Airspeed
+              command: 75-80 KIAS
+            - item: Clear of obstacles
+              command: Flaps up
+
+        - name: After Landing
+          tasks:
+            - item: Power Lever
+              command: 1000 RPM
+            - item: Fuel pump
+              command: Off
+            - item: Flaps
+              command: Up
+            - item: Lights
+              command: As required
+            - item: Pitot Heat
+              command: Off
+
+        - name: Shutdown
+          tasks:
+            - item: Fuel pump
+              command: Off
+            - item: Throttle
+              command: Idle
+            - item: Ignition Switch
+              command: Check mag grounding
+            - item: Mixture
+              command: Cutoff
+            - item: All switches
+              command: Off, right-to-left
+            - item: Magnetos
+              command: Off
