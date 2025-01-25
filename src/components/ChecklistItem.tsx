@@ -50,7 +50,7 @@ export type DoItemProps = {
   task: BasicTask;
 };
 
-const DoItem = ({ task }: DoItemProps) => {
+const ChecklistItem = ({ task }: DoItemProps) => {
   const options = useOptions();
 
   if (
@@ -91,4 +91,4 @@ const DoItem = ({ task }: DoItemProps) => {
   );
 };
 
-export default DoItem;
+export default ChecklistItem;

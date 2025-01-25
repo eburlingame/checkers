@@ -2,7 +2,7 @@ import { useOptions } from "@/hooks";
 import { BasicTask } from "@/types";
 import { Roboto_Condensed } from "next/font/google";
 import styled from "styled-components";
-import DoItem from "./DoItem";
+import ChecklistItem from "./ChecklistItem";
 
 const robotoCondensed = Roboto_Condensed({
   variable: "--font-roboto-condensed",
@@ -84,7 +84,7 @@ const SubsectionComponent = ({
 
       <TaskContainer lineSpacing={options.spacing} orientation={orientation}>
         {tasks.map((task) => (
-          <DoItem key={task.item} task={task} />
+          <ChecklistItem key={task.item} task={task} />
         ))}
       </TaskContainer>
     </SubsectionContainer>

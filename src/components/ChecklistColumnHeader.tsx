@@ -1,7 +1,7 @@
 import { ChecklistOptions } from "@/types";
 import styled from "styled-components";
 
-export type ColumnHeaderProps = {
+export type ChecklistColumnHeaderProps = {
   options: ChecklistOptions;
 };
 
@@ -23,7 +23,7 @@ const HeadingSubtext = styled.h2`
   line-height: 1;
 `;
 
-const ColumnHeader = ({ options }: ColumnHeaderProps) => {
+const ChecklistColumnHeader = ({ options }: ChecklistColumnHeaderProps) => {
   return (
     <HeaderContainer>
       <HeadingSubtext>{options.header?.left}</HeadingSubtext>
@@ -33,4 +33,4 @@ const ColumnHeader = ({ options }: ColumnHeaderProps) => {
   );
 };
 
-export default ColumnHeader;
+export default ChecklistColumnHeader;

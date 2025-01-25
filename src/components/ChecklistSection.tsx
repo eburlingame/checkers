@@ -1,6 +1,6 @@
 import { Section, Subsection, Task } from "@/types";
 import styled from "styled-components";
-import { default as SubsectionComponent } from "./Subsection";
+import { default as SubsectionComponent } from "./ChecklistSubsection";
 
 const SectionContainer = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const Header = styled.h2`
   margin: 0;
 `;
 
-export type SectionProps = {
+export type ChecklistSectionProps = {
   section: Section;
 };
 
@@ -43,7 +43,7 @@ const renderedSubsections = (tasks: Task[]): Subsection[] => {
   return subsections;
 };
 
-const SectionComponent = ({ section }: SectionProps) => {
+const ChecklistSection = ({ section }: ChecklistSectionProps) => {
   const subsections = renderedSubsections(section.tasks);
 
   return (
@@ -64,4 +64,4 @@ const SectionComponent = ({ section }: SectionProps) => {
   );
 };
 
-export default SectionComponent;
+export default ChecklistSection;

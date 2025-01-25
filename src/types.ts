@@ -2,6 +2,7 @@ export type BasicTask = {
   item: string;
   command: string;
   annotation?: string;
+  boxed?: boolean;
 };
 
 export type Subsection = {

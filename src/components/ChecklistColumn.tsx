@@ -1,8 +1,8 @@
 import { OptionsContext, useOptions } from "@/hooks";
 import { ChecklistColumn } from "@/types";
 import styled from "styled-components";
-import ColumnHeader from "./ColumnHeader";
-import Section from "./Section";
+import ColumnHeader from "./ChecklistColumnHeader";
+import Section from "./ChecklistSection";
 
 const ColumnContainer = styled.div`
   row-gap: 0px;
