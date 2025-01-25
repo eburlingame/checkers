@@ -15,10 +15,11 @@ const sourceSans = Source_Sans_3({
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
+  width: 100%;
   height: 100%;
   font-size: 10pt;
-  background-color: #111;
+  background-color: #000;
 `;
 
 export type HomeProps = {

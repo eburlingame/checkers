@@ -11,6 +11,7 @@ const PageContainer = styled.div`
 
   @media screen {
     border-bottom: 1px solid #000;
+    margin-bottom: 2em;
   }
 `;
 
