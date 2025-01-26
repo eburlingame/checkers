@@ -443,14 +443,14 @@ pages:
               command: Lean as required
             - item: Engine parameters
               command: Check
-            - item: Fuel Pump
+            - item: Fuel pump
               command: Boost
 
         - section: Cruise
           blocks:
-            - item: Fuel Pump
+            - item: Fuel pump
               command: Off
-            - item: Cruise Power
+            - item: Cruise power
               command: Set
             - item: Mixture
               command: Lean as required
@@ -478,7 +478,7 @@ pages:
           blocks:
             - item: Seats and belts
               command: Secure
-            - item: Fuel Pump
+            - item: Fuel pump
               command: Boost
             - item: Mixture
               command: As required
@@ -502,7 +502,7 @@ pages:
 
         - section: After Landing
           blocks:
-            - item: Power Lever
+            - item: Power lever
               command: 1000 RPM
             - item: Fuel pump
               command: Off
@@ -759,7 +759,7 @@ pages:
               command: As Required
             - item: Set Fuel Selector
               command: To Switch Tanks
-            - item: Set Fuel Pump
+            - item: Set Fuel pump
               command: To Boost
             - item: Set Alternate Induction Air
               command: To On
@@ -1006,7 +1006,7 @@ pages:
               command: Off
             - item: Ignition switch
               command: Off
-            - item: Fuel Pump
+            - item: Fuel pump
               command: Off
             - item: Flaps, when landing is assured
               command: 100%
