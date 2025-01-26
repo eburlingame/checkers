@@ -5,14 +5,20 @@ export type Task = {
   boxed?: boolean;
 };
 
-export type TableItem = {
+export type SpeedTableItem = {
+  speed: string;
   label: string;
   value: string;
 };
 
-export type Table = {
-  table: string;
-  items: TableItem[];
+export type SpeedTable = {
+  speed_table: string;
+  items: SpeedTableItem[];
+};
+
+export type Image = {
+  image: string;
+  src: string;
 };
 
 export type Subsection = {
@@ -26,7 +32,7 @@ export type Section = {
   blocks: Block[];
 };
 
-export type Block = Section | Subsection | Table | Task;
+export type Block = Section | Subsection | SpeedTable | Task | Image;
 
 export const getBlockId = (block: Block): string => {
   if ("item" in block) {
@@ -41,8 +47,12 @@ export const getBlockId = (block: Block): string => {
     return block.subsection;
   }
 
-  if ("table" in block) {
-    return block.table;
+  if ("speed_table" in block) {
+    return block.speed_table;
+  }
+
+  if ("image" in block) {
+    return block.src;
   }
 
   return "";

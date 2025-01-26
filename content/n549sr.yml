@@ -9,8 +9,8 @@ pages:
   - name: Ground Checklist
     options:
       accent_color: "#308e32"
-      command_width: 1.27in
-      spacing: 1.22
+      command_width: 1.3in
+      spacing: 1.075
 
     left:
       blocks:
@@ -43,7 +43,7 @@ pages:
             - item: Fuel selector
               command: Fullest tank
             - item: Flaps
-              command: 100%, check light on
+              command: 100%,\ncheck light on
             - item: Oil annunciator
               command: On
             - item: BAT 1 and BAT 2
@@ -53,7 +53,7 @@ pages:
             - item: Circuit breakers
               command: Check in
             - item: Fire extinguisher
-              command: Charged and available
+              command: Charged & available
             - item: Emergency egress hammer
               command: Available
             - item: CAPS handle
@@ -255,9 +255,11 @@ pages:
     options:
       accent_color: "#335797"
       command_width: 1.5in
-      spacing: 1.1
+      spacing: 1.0
 
     left:
+      options:
+        spacing: 1.075
       blocks:
         - section: Engine Start
           blocks:
@@ -427,7 +429,7 @@ pages:
             - item: Rudder
               command: Steer with rudder only
             - item: Elevator control
-              command: Rotate smoothly, 70 KIAS
+              command: Rotate smoothly,\n70 KIAS
             - item: Airspeed at obstacle
               command: 78 KIAS
 
@@ -530,9 +532,14 @@ pages:
     options:
       accent_color: "#e22f1a"
       command_width: 1.25in
-      spacing: 1.1
+      spacing: 1
 
     left:
+      options:
+        accent_color: "#e22f1a"
+        command_width: 1.35in
+        spacing: 1
+        
       blocks:
         - section: Engine Fire During Start
           blocks:
@@ -605,7 +612,7 @@ pages:
             - item: Airplane control
               command: Straight and level
             - item: Autopilot
-              command: Engage\nHDG & ALT hold
+              command: Engage,\nHDG & ALT hold
             - item: Heading
               command: Initiate 180° turn
 
@@ -623,6 +630,7 @@ pages:
             - item: ALT 1 master switch
               command: On
             - item: Switch off unnecessary equipment on Main Bus 1, Main Bus 2, Non-Essential Buses to reduce load. Monitor voltage.
+              boxed: true
               command:
             - item: ALT 1 master switch
               command: Off
@@ -637,6 +645,7 @@ pages:
             - item: ALT 2 master switch
               command: On
             - item: Switch off unnecessary equipment on Main Bus 1, Main Bus 2, and the Non-Essential Buses to reduce loads.
+              boxed: true
               command:
             - item: ALT 2 master switch
               command: Off
@@ -644,6 +653,10 @@ pages:
               command:
 
     right:
+      options:
+        accent_color: "#e22f1a"
+        command_width: 1.4in
+
       blocks:
         - section: Engine Indicating System Failure
           blocks:
@@ -698,13 +711,13 @@ pages:
         - section: PFD - Loss of Air Data
           blocks:
             - item: Land as soon as practical.
-            - item: Standby instruments (altitude, airspeed)
+            - item: Standby instruments
               command: Monitor
             - item: Exit IMC
 
         - section: PFD - Loss of Attitude Data
           blocks:
-            - item: Standby instruments (altitude, airspeed)
+            - item: Standby instruments
               command: Monitor
             - item: In IMC, autopilot
               command: GPSS mode
@@ -714,7 +727,7 @@ pages:
     options:
       accent_color: "#e22f1a"
       command_width: 1.25in
-      spacing: 1.1
+      spacing: 1
     left:
       blocks:
         - section: Engine Failure On Takeoff (Low Altitude)
@@ -823,9 +836,15 @@ pages:
                   command: 90 KIAS
                 - item: Land as soon as practical.
 
+        - section: Inadvertent Spin Entry
+          blocks:
+            - item: CAPS
+              command: Activate
+
     right:
       options:
-        spacing: 1.05
+        spacing: 1.0
+        command_width: 1.45in
       blocks:
         - section: Smoke and Fume Elimination
           blocks:
@@ -841,7 +860,7 @@ pages:
               command: Airflow Selector Off
             - item: Eyeball outlets
               command: Open
-            - item: If airflow is not sufficient to clear smoke
+            - item: If airflow does not clear smoke
               command: Partially open doors
             - item: Prepare to land as soon as possible.
 
@@ -873,12 +892,12 @@ pages:
               command: Off
             - item: Strobe light
               command: Off
-            - item: If possible, side slip to keep flames away from fuel tank and cabin.
+            - item: If possible, side slip to keep flames away from fuel tank & cabin.
             - item: Land as soon as possible.
 
         - section: Cabin Fire In Flight
           blocks:
-            - item: If in IMC conditions, turn ALT 1, ALT 2, and BAT 1 switches OFF. Power from battery 2 will keep the PFD operational for about 30 minutes.
+            - item: If in IMC conditions, turn ALT 1, ALT 2, & BAT 1 switches OFF. Battery 2 will power the PFD operational for about 30 min.
             - item: BAT-ALT master switches
               command: Off, as required
             - item: Heater
@@ -887,7 +906,7 @@ pages:
               command: Close
             - item: Fire extinguisher
               command: Activate
-            - item: If airflow is not sufficient to clear smoke
+            - item: If airflow does not clear smoke
               command: Partially open doors
             - item: When fire extinguished
               command: Air vents full cold
@@ -903,7 +922,7 @@ pages:
                   command: On
                 - item: Avionics power switch
                   command: On
-                - item: Activate required systems one at a time. Activate only the minimum amount of equipment necessary to complete a safe landing.
+                - item: Activate required systems one at a time. Activate only the minimum of equipment necessary to safely land.
 
         - section: Emergency Descent
           blocks:
@@ -912,7 +931,7 @@ pages:
             - item: Mixture
               command: As required
             - item: Airspeed
-              command: To Vne (201 KIAS)
+              command: To Vne (205 KIAS)
 
         - section: Inadvertent Spiral Dive During IMC Flight
           blocks:
@@ -923,20 +942,17 @@ pages:
             - item: Trim for level flight.
             - item: Power
               command: As required
-            - item: Use autopilot if functional otherwise keep hands off control yoke, use rudder to hold constant heading.
+            - item: Use autopilot if functional, otherwise keep hands off control yoke, use rudder to hold constant heading.
             - item: Exit IMC conditions as soon as possible.
-
-        - section: Inadvertent Spin Entry
-          blocks:
-            - item: CAPS
-              command: Activate
 
   - name: Emergency Checklist pg. 3
     options:
       accent_color: "#e22f1a"
       command_width: 1.25in
-      spacing: 1.1
+      spacing: 1
     left:
+      options:
+        command_width: 1.35in
       blocks:
         - section: CAPS Deployment
           blocks:
@@ -1005,10 +1021,12 @@ pages:
               command: Mayday
             - item: Transponder
               command: SQUAWK 7700
-            - item: Activate CAPS
-              command:
+            - item: CAPS
+              command: Activate
             - item: If available, life preservers should be donned and life raft should be prepared for immediate evacuation upon touchdown. Consider unlatching a door prior to assuming the emergency landing body position in order to provide a ready escape path.
-            - item: Evacuate airplane
+              boxed: true
+            - item: Airplane
+              command: Evacuate
             - item: Flotation devices
               command: Inflate, once clear of airplane
 
@@ -1023,14 +1041,14 @@ pages:
 
         - section: Power Lever Linkage Failure
           blocks:
-            - item: Verify Power Lever Movement
-              command:
-            - item: Set Power
+            - item: Power lever movement
+              command: Verify
+            - item: Power
               command: If able
-            - item: Set Flaps
+            - item: Flaps
               command: If needed
-            - item: Set Mixture
-              command: As Required (full rich to cut-off)
+            - item: Mixture
+              command: As required (full rich to cut-off)
             - item: Land as soon as possible.
 
     right:
@@ -1039,25 +1057,47 @@ pages:
         command_width: 1.25in
         spacing: 1
       blocks:
-        - section: Speed table
+        - section: Speeds
           blocks:
-            - table:
+            - speed_table: Speed table
               items:
-                - item: Vne
-                  command: 201 KIAS
-                - item: Vno
-                  command: 175 KIAS
-                - item: Va
-                  command: 125 KIAS
-                - item: Vs1
-                  command: 70 KIAS
-                - item: Vs0
-                  command: 61 KIAS
-                - item: Vfe (100%)
-                  command: 100 KIAS
-                - item: Vfe (50%)
-                  command: 85 KIAS
-                - item: Vx
-                  command: 73 KIAS
-                - item: Vy
-                  command: 88 KIAS
+                - speed: G
+                  label: Best glide
+                  value: 88 KIAS
+                - speed: FE
+                  label: Flaps extended (50%)
+                  value: 119 KIAS
+                - speed: FE
+                  label: Flaps extended (100%)
+                  value: 104 KIAS
+                - speed: PD
+                  label: Parachute deployment
+                  value: 133 KIAS
+                - speed: S0
+                  label: Stall speed, flaps 100%
+                  value: 59 KIAS
+                - speed: S1
+                  label: Stall speed, flap up
+                  value: 70 KIAS
+                - speed: NO
+                  label: Normal operating
+                  value: 176 KIAS
+                - speed: NE
+                  label: Never exceed
+                  value: 205 KIAS
+                - label: Max demonstrated crosswind
+                  value: 20 KTS
+                - label: Limited flap landing (50%)
+                  value: 85-90 KIAS
+                - label: Limited flap landing (0%)
+                  value: 90-95 KIAS
+
+        - section: Light Gun Signals
+          blocks:
+            - image: Light gun signal
+              src: /images/light-gun-signals.png
+
+        - section: Cloud Clearance Requirements
+          blocks:
+            - image: Light gun signal
+              src: /images/cloud-clearance.jpg

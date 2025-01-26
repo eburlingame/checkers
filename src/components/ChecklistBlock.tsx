@@ -1,6 +1,8 @@
 import { Block } from "@/types";
+import ChecklistImage from "./ChecklistImage";
 import ChecklistItem from "./ChecklistItem";
 import ChecklistSection from "./ChecklistSection";
+import ChecklistSpeedTable from "./ChecklistSpeedTable";
 import { default as SubsectionComponent } from "./ChecklistSubsection";
 
 export type ChecklistBlockProps = {
@@ -20,8 +22,12 @@ const ChecklistBlock = ({ block }: ChecklistBlockProps) => {
     return <ChecklistItem task={block} />;
   }
 
-  if ("table" in block) {
-    return <div>Table not implemented yet</div>;
+  if ("speed_table" in block) {
+    return <ChecklistSpeedTable table={block} />;
+  }
+
+  if ("image" in block) {
+    return <ChecklistImage image={block} />;
   }
 };
 
