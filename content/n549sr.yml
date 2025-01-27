@@ -53,7 +53,7 @@ pages:
             - item: Circuit breakers
               command: Check in
             - item: Fire extinguisher
-              command: Charged & available
+              command: Charged/ready
             - item: Emergency egress hammer
               command: Available
             - item: CAPS handle
@@ -169,7 +169,8 @@ pages:
                 - item: Landing light
                   command: Condition
                 - item: Engine oil (cold engine only)
-                  command: 6-8 QTS,\n6.5 QTS preferred
+                  command: 6-8 QTS
+                  annotation: (6.5 qts ideal)
                 - item: Engine oil door
                   command: Door secure
                 - item: Cowling
@@ -201,7 +202,7 @@ pages:
                 - item: Fuel vent
                   command: Unobstructed
                 - item: Pitot mast
-                  command: Cover off/tube clear
+                  command: Clear/cover off
                 - item: Strobe, nav light and lens
                   command: Condition
                 - item: Left wing tip
@@ -406,6 +407,9 @@ pages:
               command: Briefed as needed
 
     right:
+      options:
+        command_width: 1.55in
+
       blocks:
         - section: Normal Takeoff
           blocks:
@@ -437,7 +441,7 @@ pages:
             - item: Rudder
               command: Steer with rudder only
             - item: Elevator control
-              command: Rotate smoothly,\n70 KIAS
+              command: Rotate smoothly, 70 KIAS
             - item: Airspeed at obstacle
               command: 78 KIAS
 
@@ -518,7 +522,7 @@ pages:
               command: Up
             - item: Lights
               command: As required
-            - item: Pitot Heat
+            - item: Pitot heat
               command: Off
 
         - section: Shutdown
@@ -527,7 +531,7 @@ pages:
               command: Off
             - item: Throttle
               command: Idle
-            - item: Ignition Switch
+            - item: Ignition switch
               command: Check mag grounding
             - item: Mixture
               command: Cutoff
@@ -620,7 +624,7 @@ pages:
             - item: Airplane control
               command: Straight and level
             - item: Autopilot
-              command: Engage,\nHDG & ALT hold
+              command: Engage HDG/ALT hold
             - item: Heading
               command: Initiate 180° turn
 
@@ -750,11 +754,11 @@ pages:
               command: Off
             - item: Flaps
               command: As required
-            - item: If time permits, power Lever
+            - item: Power lever, time permitting
               command: Idle
             - item: Fuel pump
               command: Off
-            - item: BAT-ALT Master switches
+            - item: BAT-ALT master switches
               command: Off
             - item: Seat belts
               command: Secured
@@ -763,18 +767,18 @@ pages:
           blocks:
             - item: Establish best glide speed
               command: 88 KIAS
-            - item: Set Mixture
-              command: As Required
-            - item: Set Fuel Selector
-              command: To Switch Tanks
-            - item: Set Fuel pump
-              command: To Boost
-            - item: Set Alternate Induction Air
+            - item: Mixture
+              command: As required
+            - item: Fuel selector
+              command: To switch tanks
+            - item: Fuel pump
+              command: To boost
+            - item: Alternate induction air
               command: To On
-            - item: Set Air Conditioner (if installed)
+            - item: Air conditioner
               command: To Off
-            - item: Check Ignition Switch
-              command: Both
+            - item: Ignition switch
+              command: Check both
             - item: If no start, perform Engine Airstart or Forced Landing checklist.
 
         - section: Engine Airstart
@@ -861,11 +865,11 @@ pages:
             - item: Temperature selector
               command: Cold
             - item: Vent selector
-              command: Feet/Panel/Defrost Position
-            - item: Airflow Selector
-              command: Maximum Airflow
-            - item: If source of smoke is firewall forward
-              command: Airflow Selector Off
+              command: Feet/Panel/Defrost
+            - item: Airflow selector
+              command: Maximum airflow
+            - item: If smoke source is firewall forward
+              command: Airflow selector Off
             - item: Eyeball outlets
               command: Open
             - item: If airflow does not clear smoke
@@ -906,6 +910,7 @@ pages:
         - section: Cabin Fire In Flight
           blocks:
             - item: If in IMC conditions, turn ALT 1, ALT 2, & BAT 1 switches OFF. Battery 2 will power the PFD operational for about 30 min.
+              boxed: true
             - item: BAT-ALT master switches
               command: Off, as required
             - item: Heater
@@ -966,11 +971,11 @@ pages:
           blocks:
             - item: Airspeed
               command: Minimum possible (Max 133 KIAS)
-            - item: Set mixture (time permitting)
+            - item: Mixture, time permitting
               command: Cutoff
             - item: Activation handle cover
               command: Remove
-            - item: Activation Handle
+            - item: Activation handle
               command: Pull straight down
             - item: Pull activation T-handle from its holder. Clasp both hands around the handle and pull straight down in a strong, steady, and continuous motion. Maintain maximum pull force until the rocket activates. Pull forces up to, or exceeding, 45 pounds may be required. Bending of the handle-housing mount is to be expected.
               boxed: true
@@ -1085,7 +1090,7 @@ pages:
                   label: Stall speed, flaps 100%
                   value: 59 KIAS
                 - speed: S1
-                  label: Stall speed, flap up
+                  label: Stall speed, flaps up
                   value: 70 KIAS
                 - speed: NO
                   label: Normal operating
@@ -1095,9 +1100,9 @@ pages:
                   value: 205 KIAS
                 - label: Max demonstrated crosswind
                   value: 20 KTS
-                - label: Limited flap landing (50%)
+                - label: Limited flap landing (flaps 50%)
                   value: 85-90 KIAS
-                - label: Limited flap landing (0%)
+                - label: Limited flap landing (flaps 0%)
                   value: 90-95 KIAS
 
         - section: Light Gun Signals
