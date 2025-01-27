@@ -34,10 +34,6 @@ pages:
               command: Out
             - item: BAT 1
               command: On
-            - item: Lights
-              command: Check
-            - item: Stall warning
-              command: Check
             - item: Fuel quantity
               command: Check
             - item: Fuel selector
@@ -46,6 +42,10 @@ pages:
               command: 100%,\ncheck light on
             - item: Oil annunciator
               command: On
+            - item: Lights
+              command: Check
+            - item: Stall warning
+              command: Check
             - item: BAT 1 and BAT 2
               command: Off
             - item: Alternate static source
@@ -71,7 +71,7 @@ pages:
                   command: Unlock
                 - item: COM 1 antenna
                   command: Condition
-                - item: Wing/fuselage fairing
+                - item: Wing/fuselage fairings
                   command: Check
                 - item: COM 2 antenna
                   command: Condition
@@ -89,8 +89,10 @@ pages:
                   command: Condition
                 - item: Elevator and tab
                   command: Condition/movement
+                - item: Elevator hinges/bolts/cotter pins
+                  command: Secure
                 - item: Rudder
-                  command: Condition/Movement
+                  command: Condition/movement
                 - item: Rudder trim tab
                   command: Condition
                 - item: Rudder hinges/bolts/cotter pins
@@ -164,8 +166,8 @@ pages:
                   command: Condition
                 - item: Landing light
                   command: Condition
-                - item: Engine oil level
-                  command: Check 6-8 QUARTS
+                - item: Engine oil (cold engine only)
+                  command: 6-8 QTS,\n6.5 QTS preferred
                 - item: Engine oil door
                   command: Leaks/door secure
                 - item: Cowling
@@ -174,7 +176,7 @@ pages:
                   command: Door secure
                 - item: Vortex generator
                   command: Condition
-                - item: Exhaust pipe(s)
+                - item: Exhaust pipes
                   command: Condition & security
             - subsection: Left Wing
               blocks:
@@ -226,6 +228,8 @@ pages:
           blocks:
             - item: ELT
               command: Transmit light out
+            - item: CO detector
+              command: Off
             - item: Parking brake
               command: As required
             - item: Hobbs + flight time
@@ -234,22 +238,20 @@ pages:
               command: Install
             - item: Chocks
               command: Install
-            - item: Tiedowns
-              command: As required
             - item: Engine inlet plugs
               command: Install
-            - item: Battery charger
-              command: Connected
+            - item: Tiedowns
+              command: As required
             - item: Windscreen
               command: Cleaned
-            - item: Leading edge
+            - item: Leading edge (except TKS membrane)
               command: Cleaned
             - item: FlightCircle
               command: Check in
             - item: Tug
               command: Charging
-            - item: Logbook
-              command: Entered
+            - item: Hangar lights
+              command: Out
 
   - name: Flight Checklist
     options:
@@ -259,7 +261,7 @@ pages:
 
     left:
       options:
-        spacing: 1.075
+        spacing: 1.05
       blocks:
         - section: Engine Start
           blocks:
@@ -273,6 +275,8 @@ pages:
                   command: Briefed
                 - item: Seats and belts
                   command: Adjusted and secure
+                - item: CO detector
+                  command: On
                 - item: Brakes
                   command: Hold
                 - item: BAT master switches
@@ -323,8 +327,6 @@ pages:
 
             - subsection: Run up
               blocks:
-                - item: Doors
-                  command: Latched
                 - item: CAPS handle
                   command: Verify pin removed
                 - item: Seats and belts
@@ -341,10 +343,12 @@ pages:
                   command: As required
                 - item: Flaps
                   command: 50%, checked
+                - item: Autopilot
+                  command: Configured for dep.
+                - item: Autopilot
+                  command: Confirm operation
                 - item: Transponder
                   command: Set
-                - item: Autopilot
-                  command: Configured
                 - item: Nav/Radios/GPS
                   command: Set for takeoff
                 - item: Cabin heat defrost
@@ -368,7 +372,7 @@ pages:
                 - item: Lights
                   command: As required
                 - item: Magnetos
-                  command: Left only / Right only
+                  command: Left / Right / Both
                 - item: RPM drop
                   command: ≤150 RPM, ≤75 RPM between mags
                 - item: Engine parameters
@@ -396,6 +400,8 @@ pages:
               command: <500' / >500' / >2000'
             - item: CAPs available
               command: 500 ft. AGL
+            - item: Departure procedure
+              command: Briefed as needed
 
     right:
       blocks:
@@ -539,7 +545,7 @@ pages:
         accent_color: "#e22f1a"
         command_width: 1.35in
         spacing: 1
-        
+
       blocks:
         - section: Engine Fire During Start
           blocks:
@@ -815,8 +821,8 @@ pages:
 
         - section: Low Oil Pressure
           blocks:
-            - item: Power Lever
-              command: Minimum Required
+            - item: Power lever
+              command: Minimum required
             - item: Land as soon as possible.
 
         - section: Propeller Governor Failure
@@ -824,13 +830,13 @@ pages:
             - subsection: "Propeller RPM will not increase:"
               orientation: horizontal
               blocks:
-                - item: Oil Pressure
+                - item: Oil pressure
                   command: Check
                 - item: Land as soon as practical.
             - subsection: "Propeller overspeeds or will not decrease:"
               orientation: horizontal
               blocks:
-                - item: Adjust Power Lever
+                - item: Adjust power lever
                   command: Keep RPM in limits
                 - item: Reduce Airspeed
                   command: 90 KIAS

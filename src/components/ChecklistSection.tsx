@@ -7,7 +7,7 @@ const SectionContainer = styled.div<{ lineSpacing?: string }>`
   display: flex;
   flex-direction: column;
   row-gap: 0px;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.35em;
   line-height: ${(props) => props.lineSpacing || "1.025"};
 `;
 

@@ -11,14 +11,20 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   border-bottom: 2px solid black;
   margin-bottom: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 `;
 
 const HeadingTitle = styled.h1`
+  padding: 0px;
+  margin: 0px;
   font-size: 12pt;
   line-height: 1;
 `;
 
 const HeadingSubtext = styled.h2`
+  padding: 0px;
+  margin: 0px;
   font-size: 10pt;
   line-height: 1;
 `;

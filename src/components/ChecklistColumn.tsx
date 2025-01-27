@@ -25,7 +25,9 @@ const ColumnContainer = styled.div`
 
 const SectionsContainer = styled.div<{ accentColor: string }>`
   border: 0.5em solid ${({ accentColor }) => accentColor};
-  padding: 0.5em;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 `;
 
 export type ChecklistColumnProps = {
