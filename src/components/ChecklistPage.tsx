@@ -9,9 +9,13 @@ const PageContainer = styled.div`
   height: 11in;
   display: flex;
 
+  padding-bottom: 0.1875in;
+  padding-top: 0.1875in;
+
   @media screen {
     border-bottom: 1px solid #000;
     margin-bottom: 2em;
+    background-color:rgb(76, 76, 76)
   }
 `;
 

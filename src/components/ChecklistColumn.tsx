@@ -5,8 +5,8 @@ import ChecklistBlock from "./ChecklistBlock";
 import ColumnHeader from "./ChecklistColumnHeader";
 
 const ColumnContainer = styled.div`
+  background-color: #fff;
   row-gap: 0px;
-  height: 11in;
   width: 4.25in;
 
   padding: 0.05in;
@@ -16,6 +16,9 @@ const ColumnContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
+
+  padding-left: 0.25in;
+  padding-right: 0.25in;
 
   @media screen {
     border-left: 0.1px solid black;

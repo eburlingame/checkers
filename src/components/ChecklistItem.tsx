@@ -8,7 +8,7 @@ const Container = styled.div<{ boxed?: boolean }>`
   align-items: baseline;
   width: 100%;
   font-weight: 400;
-  font-size: 10pt;
+  font-size: 9.5pt;
 
   border: ${(props) => (props.boxed ? "1px solid #000" : "none")};
   border-radius: ${(props) => (props.boxed ? "0.2em" : "0")};
