@@ -2,15 +2,15 @@ name: N549SR Checklists
 options:
   header:
     left: PFFC
-    center: N549SR - 2006 Cirrus SR22
-    right: Version 1.0
+    center: N549SR
+    right: Version 1.1
 
 pages:
-  - name: Ground Checklist
+  - name: Ground
     options:
       accent_color: "#308e32"
       command_width: 1.2in
-      spacing: 1.075
+      spacing: 1.2
 
     left:
       blocks:
@@ -65,10 +65,8 @@ pages:
 
         - section: Walk-Around
           blocks:
-            - subsection: Left Fuselage
+            - subsection: Left Fuse.
               blocks:
-                - item: Door lock
-                  command: Unlock
                 - item: COM 1 antenna
                   command: Condition
                 - item: Wing/fuselage fairings
@@ -97,7 +95,7 @@ pages:
                   command: Condition
                 - item: Rudder hinges/bolts/cotter pins
                   command: Secure
-            - subsection: Right Fuselage and Wing
+            - subsection: Right Fuse. and Wing
               blocks:
                 - item: Static button
                   command: No blockage
@@ -191,8 +189,6 @@ pages:
                   command: Condition
                 - item: Chocks and tiedown ropes
                   command: Remove
-                - item: Fuel drains
-                  command: Drain and sample
                 - item: Cabin air vent
                   command: Unobstructed
                 - item: Fuel cap
@@ -256,7 +252,7 @@ pages:
             - item: Hangar lights
               command: Out
 
-  - name: Flight Checklist
+  - name: Flight
     options:
       accent_color: "#335797"
       command_width: 1.5in
@@ -336,6 +332,8 @@ pages:
                   command: Secure
                 - item: Air conditioner
                   command: As desired
+                - item: Cabin heat defrost
+                  command: As required
                 - item: Fuel quantity
                   command: Confirm
                 - item: Fuel selector
@@ -346,16 +344,6 @@ pages:
                   command: As required
                 - item: Flaps
                   command: 50%, checked
-                - item: Autopilot
-                  command: Configured for dep.
-                - item: Autopilot
-                  command: Confirm operation
-                - item: Transponder
-                  command: Set
-                - item: Nav/Radios/GPS
-                  command: Set for takeoff
-                - item: Cabin heat defrost
-                  command: As required
                 - item: Brakes
                   command: Hold
                 - item: Power lever
@@ -377,17 +365,32 @@ pages:
                 - item: Magnetos
                   command: Left / Right / Both
                 - item: RPM drop
-                  command: ≤150 RPM, ≤75 RPM between mags
+                  command: ≤150 RPM
+                - item: RPM between mags
+                  command: ≤75 RPM
                 - item: Engine parameters
                   command: Check
                 - item: Power lever
                   command: 1000 RPM
-                - item: Altimeter 1 & 2
-                  command: Baro set
                 - item: Flight controls
                   command: Free and correct
                 - item: Trim
                   command: Set for takeoff
+
+            - subsection: Avionics
+              blocks:
+                - item: Altimeter 1 & 2
+                  command: Baro set
+                - item: Autopilot
+                  command: Confirm operation
+                - item: Autopilot
+                  command: Configured for dep.
+                - item: Transponder
+                  command: Set
+                - item: Nav/radios/GPS
+                  command: Set for takeoff
+                - item: PFD CDI source
+                  command: Set
                 - item: Autopilot
                   command: Disconnected
 
@@ -540,7 +543,7 @@ pages:
             - item: Magnetos
               command: Off
 
-  - name: Emergency Checklist pg. 1
+  - name: Abnormal
     options:
       accent_color: "#e22f1a"
       command_width: 1.25in
@@ -553,6 +556,17 @@ pages:
         spacing: 1
 
       blocks:
+        - section: Engine Flooded Procedure
+          blocks:
+            - item: "Weak intermittent firing followed by puffs of black smoke from the exhaust stack indicates over-priming or flooding. Excess fuel can be cleared from the combustion chambers by the following procedure:"
+              boxed: true
+            - item: Turn fuel pump off.
+            - item: Allow fuel to drain from intake tubes.
+            - item: Set the mixture control full lean and the power lever full open.
+            - item: Crank the engine through several revolutions with the starter.
+            - item: When engine starts, release ignition switch, retard power lever, and slowly advance the mixture control to FULL RICH position. If the engine is under-primed, especially with a cold soaked engine, it will not fire, and additional priming will be necessary. As soon as the cylinders begin to fire, open the power lever slightly to keep it running.
+              boxed: true
+
         - section: Engine Fire During Start
           blocks:
             - item: Mixture
@@ -606,10 +620,13 @@ pages:
               command: Idle
             - item: Brakes
               command: As required
+
         - section: Inadvertent Icing Encounter
           blocks:
             - item: Pitot heat
               command: On
+            - item: Ice protect system (TKS)
+              command: On, max
             - item: Exit icing conditions. Turn back or change altitude.
               command:
             - item: Cabin heat
@@ -633,6 +650,12 @@ pages:
             - item: Airplane control
               command: Maintain
 
+    right:
+      options:
+        accent_color: "#e22f1a"
+        command_width: 1.4in
+
+      blocks:
         - section: Alternator Failure / ALT 1 Light Steady
           blocks:
             - item: ALT 1 master switch
@@ -647,7 +670,7 @@ pages:
             - item: ALT 1 master switch
               command: Off
             - item: Land as soon as practical.
-              command:
+
         - section: Alternator Failure / ALT 2 Light Steady
           blocks:
             - item: ALT 2 master switch
@@ -662,14 +685,7 @@ pages:
             - item: ALT 2 master switch
               command: Off
             - item: Land as soon as practical.
-              command:
 
-    right:
-      options:
-        accent_color: "#e22f1a"
-        command_width: 1.4in
-
-      blocks:
         - section: Engine Indicating System Failure
           blocks:
             - item: Annun/engine inst circuit breaker
@@ -735,7 +751,7 @@ pages:
               command: GPSS mode
             - item: Exit IMC
 
-  - name: Emergency Checklist pg. 2
+  - name: Emergency 1
     options:
       accent_color: "#e22f1a"
       command_width: 1.25in
@@ -958,7 +974,7 @@ pages:
             - item: Use autopilot if functional, otherwise keep hands off control yoke, use rudder to hold constant heading.
             - item: Exit IMC conditions as soon as possible.
 
-  - name: Emergency Checklist pg. 3
+  - name: Emergency 2
     options:
       accent_color: "#e22f1a"
       command_width: 1.25in

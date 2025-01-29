@@ -15,7 +15,7 @@ const PageContainer = styled.div`
   @media screen {
     border-bottom: 1px solid #000;
     margin-bottom: 2em;
-    background-color:rgb(76, 76, 76)
+    background-color: rgb(76, 76, 76);
   }
 `;
 
@@ -32,8 +32,8 @@ const ChecklistPage = ({ page }: ChecklistPageProps) => {
       key={page.name}
     >
       <PageContainer>
-        <ChecklistColumn column={page.left} />
-        <ChecklistColumn column={page.right} />
+        <ChecklistColumn page={page} column={page.left} />
+        <ChecklistColumn page={page} column={page.right} />
       </PageContainer>
     </OptionsContext.Provider>
   );
