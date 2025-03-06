@@ -16,6 +16,10 @@ pages:
       blocks:
         - section: Preflight Inspection
           blocks:
+            - item: Engine inlet plugs
+              command: Remove
+            - item: Pitot tube cover
+              command: Remove
             - item: Stall warning tester
               command: Retrieve
             - item: ARROW documents
@@ -282,6 +286,9 @@ pages:
                   command: On check volts
                 - item: Strobe lights
                   command: On
+
+            - subsection: Start
+              blocks:
                 - item: Mixture
                   command: Full rich
                 - item: Power lever
@@ -306,6 +313,8 @@ pages:
                   command: Monitor
                 - item: Ammeter indication
                   command: Check
+                - item: Mixture
+                  command: Lean for taxi
 
             - subsection: Taxi
               blocks:
@@ -321,8 +330,6 @@ pages:
                   command: Disengage
                 - item: Brakes
                   command: Check
-                - item: AHRS calibration
-                  command: Confirm
 
             - subsection: Run up
               blocks:
@@ -374,8 +381,6 @@ pages:
                   command: 1000 RPM
                 - item: Flight controls
                   command: Free and correct
-                - item: Trim
-                  command: Set for takeoff
 
             - subsection: Avionics
               blocks:
@@ -393,6 +398,8 @@ pages:
                   command: Set
                 - item: Autopilot
                   command: Disconnected
+                - item: Trim
+                  command: Set for takeoff
 
         - section: Departure briefing
           blocks:
@@ -521,6 +528,8 @@ pages:
               command: 1000 RPM
             - item: Fuel pump
               command: Off
+            - item: Mixture
+              command: Lean for taxi
             - item: Flaps
               command: Up
             - item: Lights
@@ -542,6 +551,8 @@ pages:
               command: Off, right-to-left
             - item: Magnetos
               command: Off
+            - item: CAPS pins
+              command: Install
 
   - name: Abnormal
     options:
