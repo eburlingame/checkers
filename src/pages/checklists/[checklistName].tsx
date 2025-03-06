@@ -46,7 +46,10 @@ export default function Home({ checklist }: HomeProps) {
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const { checklistName } = params as { checklistName: string };
 
-  const checklistFile = readFileSync(`content/${checklistName}.yml`, "utf-8");
+  const checklistFile = readFileSync(
+    `${process.cwd()}/content/${checklistName}.yml`,
+    "utf-8"
+  );
   const checklist = parse(checklistFile) as ChecklistType;
 
   return {
@@ -57,7 +60,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 };
 
 export const getStaticPaths = async () => {
-  const checklistYamlFiles = readdirSync("content")
+  const checklistYamlFiles = readdirSync(process.cwd() + "/content")
     .filter((file) => file.endsWith(".yml"))
     .map((file) => ({
       params: {
