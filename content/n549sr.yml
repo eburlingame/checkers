@@ -156,9 +156,7 @@ pages:
                   command: Remove and stow
                 - item: Strut
                   command: Condition
-                - item: Nose wheel fairing
-                  command: Condition
-                - item: Nose wheel and tire
+                - item: Nose wheel fairing, wheel, tire
                   command: Condition
                 - item: Propeller
                   command: Condition
@@ -176,7 +174,7 @@ pages:
                 - item: Engine oil door
                   command: Door secure
                 - item: Cowling
-                  command: Attachments secure
+                  command: Secure
                 - item: External power
                   command: Door secure
                 - item: Vortex generator
@@ -226,6 +224,23 @@ pages:
                   annotation: (2 drains)
                 - item: Gascolator
                   command: Sampled for 3 SEC.
+
+            - subsection: TKS
+              blocks:
+                - item: Battery 1
+                  command: On
+                - item: Ice protection system
+                  command: Max
+                - item: Horizontal stabilizer TKS panels
+                  command: Evidence of fluid
+                - item: Wing TKS panels
+                  command: Evidence of fluid
+                - item: Propeller slinger
+                  command: Evidence of fluid
+                - item: Ice protection system
+                  command: Off
+                - item: Battery 1
+                  command: Off
 
         - section: Securing Airplane
           blocks:
