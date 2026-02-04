@@ -37,7 +37,7 @@ const VerticalSubsectionLabel = styled.div`
 `;
 
 const HorizontalSubsectionLabel = styled.div`
-  margin-top: 0.25em;
+  margin-top: 0.15em;
   margin-bottom: 0.15em;
   font-weight: 500;
   line-height: 1.1;

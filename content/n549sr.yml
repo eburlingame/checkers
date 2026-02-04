@@ -3,7 +3,7 @@ options:
   header:
     left: PFFC
     center: N549SR
-    right: Version 1.3
+    right: Version 1.4
 
 pages:
   - name: Ground
@@ -304,18 +304,32 @@ pages:
 
             - subsection: Start
               blocks:
-                - item: Mixture
-                  command: Full rich
-                - item: Power lever
-                  command: Full forward
-                - item: Fuel pump
-                  command: Prime then boost
-                - item: Propeller area
-                  command: Clear
-                - item: Power lever
-                  command: Open 1/4 in.
-                - item: Ignition switch
-                  command: Start
+                - subsection: Cold Start
+                  orientation: horizontal
+                  blocks:
+                    - item: Mixture
+                      command: Full rich
+                    - item: Power lever
+                      command: Full forward
+                    - item: Fuel pump
+                      command: Prime 2-4s, then boost
+                    - item: Propeller area
+                      command: Clear
+                    - item: Power lever
+                      command: Open 1/4 in.
+                    - item: Ignition switch
+                      command: Start
+                - subsection: Warm Start
+                  orientation: horizontal
+                  blocks:
+                    - item: Mixture
+                      command: Full rich
+                    - item: Propeller area
+                      command: Clear
+                    - item: Power lever
+                      command: Open 1/4 in.
+                    - item: Ignition and fuel pump
+                      command: Start + boost at once
                 - item: Power lever
                   command: Maintain 1000 RPM
                 - item: Oil pressure
@@ -414,6 +428,11 @@ pages:
                 - item: Trim
                   command: Set for takeoff
 
+    right:
+      options:
+        command_width: 1.55in
+
+      blocks:
         - section: Departure briefing
           blocks:
             - item: Runway, crosswind
@@ -429,11 +448,6 @@ pages:
             - item: Departure procedure
               command: Briefed as needed
 
-    right:
-      options:
-        command_width: 1.55in
-
-      blocks:
         - section: Normal Takeoff
           blocks:
             - item: Brakes
@@ -521,19 +535,6 @@ pages:
               command: As required
             - item: Autopilot
               command: As required
-
-        - section: Go-Around
-          blocks:
-            - item: Autopilot
-              command: Disengage
-            - item: Power lever
-              command: Full forward
-            - item: Flaps
-              command: 50%
-            - item: Airspeed
-              command: 75-80 KIAS
-            - item: Clear of obstacles
-              command: Flaps up
 
         - section: After Landing
           blocks:
