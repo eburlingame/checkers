@@ -3,7 +3,7 @@ options:
   header:
     left: PFFC
     center: N549SR
-    right: Version 1.4
+    right: Version 1.5
 
 pages:
   - name: Ground
@@ -533,8 +533,6 @@ pages:
               command: As required
             - item: Flaps
               command: As required
-            - item: Autopilot
-              command: As required
 
         - section: After Landing
           blocks:
@@ -553,6 +551,8 @@ pages:
 
         - section: Shutdown
           blocks:
+            - item: AC + Recirc. Fan
+              command: Off
             - item: Fuel pump
               command: Off
             - item: Throttle
